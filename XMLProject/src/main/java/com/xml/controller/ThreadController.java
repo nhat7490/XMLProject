@@ -26,17 +26,12 @@ public class ThreadController {
     @GetMapping(value = "/crawl", produces = MediaType.APPLICATION_XML_VALUE)
     public ResponseEntity CrawlingControl(@RequestParam("option") String option) {
         CrawlService crawlService = new CrawlService(movieService, validate);
-        if (option.equalsIgnoreCase("run")) {
+        System.out.println(option);
+        if (option.equals("run")) {
             CrawlService.flag = true;
             crawlService.run();
-            CrawlService.flag = false;
-            try {
-                Thread.sleep(604800);
-                CrawlService.flag = true;
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        } else if(option.equalsIgnoreCase("stop")){
+
+        } else if(option.equals("pause")){
             CrawlService.flag = false;
         }
         return ResponseEntity.status(HttpStatus.OK).body("");

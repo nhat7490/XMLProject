@@ -47,10 +47,10 @@
               Cập Nhật Thông Tin
             </span>
                 <span class="login100-form-title p-b-41">
-                <a href="/crawl/status=run">
+                <a href="/crawl?option=run">
                     <button type="button" class="btn btn-success btn-lg">Run</button>
                 </a>
-                <a href="/crawl/status=stop">
+                <a href="/crawl?option=pause">
                     <button type="button" class="btn btn-danger btn-lg">Stop</button>
                 </a>
             </span>

@@ -52,7 +52,7 @@ public class CrawlService extends Thread {
             List<Movie> phimmoiList = new ArrayList<>();
 
 
-            for (int i = 1; i <= 20 && flag; i++) {
+            for (int i = 1; i <= 20; i++) {
                 String url = phimmoiHtml + "page/" + i;
 
                 Crawler.parseHTML(url, phimmoiBegin, phimmoiEnd);
@@ -70,7 +70,7 @@ public class CrawlService extends Thread {
 
             Set<Movie> list = new HashSet<>();
 
-            for (int i = 1; i <= 20 && flag; i++) {
+            for (int i = 1; i <= 20; i++) {
                 String url = vkoolHtml + "" + i;
 
                 Crawler.parseHTML(url, vkoolBegin, vkoolEnd);
@@ -181,6 +181,7 @@ public class CrawlService extends Thread {
                 }
             }
             System.out.println("SUCCESS");
+            flag = false;
         }
     }
 }

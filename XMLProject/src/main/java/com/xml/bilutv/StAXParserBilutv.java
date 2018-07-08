@@ -56,10 +56,15 @@ public class StAXParserBilutv {
 
                     movie.setBiluLink(uri.trim());
 //                    System.out.println(movie.getBiluLink());
+                    try {
+                        String name = getNodeStaXValue(reader, "a", "", "title")
+                                .split("-")[0];
+                        movie.setTitle(name.trim());
 
-                    String name = getNodeStaXValue(reader, "a", "", "title")
-                            .split("-")[0];
-                    movie.setTitle(name.trim());
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
 //                    System.out.println(movie.getTitle());
 
                     foundLink = true;
@@ -191,10 +196,10 @@ public class StAXParserBilutv {
                     } else if (dtText.contains("Năm")) {
                         reader.nextTag(); //go to next tag
                         reader.next(); //go to text value
-                        try{
+                        try {
                             year = new BigInteger(reader.getText().trim());
                             movie.setYearPublic(year);
-                        }catch(Exception e){
+                        } catch (Exception e) {
                             System.out.println("WRONG FORMAT FOR YEAR");
                         }
 
