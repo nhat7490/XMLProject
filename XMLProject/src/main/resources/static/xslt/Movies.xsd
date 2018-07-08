@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://xml.netbeans.org/schema/movie"
+           xmlns="http://xml.netbeans.org/schema/movie"
+           elementFormDefault="qualified">
+
+    <xs:element name="movies">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="movie" type="Movie" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="movie" type="Movie"/>
+
+    <xs:complexType name="Movie">
+        <xs:sequence>
+            <xs:element name="id" type="xs:integer" nillable="true"/>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="quality">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="[a-zA-Z]*(\s)?HD(\s)?(-)?(\s)?([a-zA-Z0-9])*"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="year_public" type="xs:integer"/>
+            <xs:element name="actors" type="xs:string"/>
+            <xs:element name="director" type="xs:string"/>
+            <xs:element name="poster_link" type="xs:string"/>
+            <xs:element name="vkool_link" type="xs:string"/>
+            <xs:element name="bilu_link" type="xs:string"/>
+            <xs:element name="vkool_rate" type="xs:double"/>
+            <xs:element name="bilu_rate" type="xs:double"/>
+            <xs:element name="self_rate" type="xs:double"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
+
