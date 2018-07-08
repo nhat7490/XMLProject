@@ -1,0 +1,39 @@
+CREATE SCHEMA xml_project;
+USE xml_project;
+
+CREATE TABLE IF NOT EXISTS movie (
+  id int PRIMARY KEY AUTO_INCREMENT,
+  title NVARCHAR(255) UNIQUE NOT NULL,
+  quality NVARCHAR(255),
+  year_public INT,
+  actors NVARCHAR(255),
+  director NVARCHAR(255),
+  poster_link NVARCHAR(255),
+  vkool_link NVARCHAR(255),
+  bilutv_link NVARCHAR(255),
+  vkool_rate FLOAT,
+  bilutv_rate FLOAT,
+  self_rate FLOAT
+);
+
+CREATE TABLE IF NOT EXISTS user (
+  id int PRIMARY KEY AUTO_INCREMENT,
+  username NVARCHAR(20),
+  password NVARCHAR(20),
+  firstname NVARCHAR(10),
+  lastname NVARCHAR(10),
+  role INT
+);
+
+CREATE TABLE IF NOT EXISTS role (
+  id int PRIMARY KEY AUTO_INCREMENT,
+  role_name NVARCHAR(10)
+);
+
+INSERT INTO role VALUES ('0','ADMIN');
+INSERT INTO role VALUES ('0','USER');
+INSERT INTO user VALUES ('0', 'phuonghtk','123','phuong','ho','2');
+
+ALTER TABLE user ADD FOREIGN KEY (role) REFERENCES role(id);
+
+DROP TABLE movie;
