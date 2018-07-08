@@ -16,7 +16,7 @@
                 <!--<xsl:if test="contains(ns:quality,'HD')">-->
                 <div class="col-sm-6 col-12 col-md-6 col-lg-3 col-xl-3 tm-album-col">
                     <figure class="effect-sadie">
-                        <img src="{ns:poster_link}" alt="Image" class="img-fluid"/>
+                        <img src="{ns:poster_link}" class="img-fluid"/>
                         <figcaption>
                             <h2 font-size="25px">
                                 <strong>

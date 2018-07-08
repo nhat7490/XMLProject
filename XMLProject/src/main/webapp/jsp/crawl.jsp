@@ -41,33 +41,48 @@
 
             <div class="wrap-login100 p-t-30 p-b-50">
                 <span class="login100-form-title p-b-41">
-              Welcome, ${user.firstname}
-            </span>
+                    Welcome, ${user.firstname}
+                </span>
                 <span class="login100-form-title p-b-41">
-              Cập Nhật Thông Tin
-            </span>
+                    Cập Nhật Thông Tin
+                </span>
                 <span class="login100-form-title p-b-41">
-                <a href="/crawl?option=run">
-                    <button type="button" class="btn btn-success btn-lg">Run</button>
-                </a>
-                <a href="/crawl?option=pause">
-                    <button type="button" class="btn btn-danger btn-lg">Stop</button>
-                </a>
-            </span>
+                    <a href="/crawl?option=run">
+                        <button type="button" class="btn btn-success btn-lg">Run</button>
+                    </a>
+                    <a href="/crawl?option=pause">
+                        <button type="button" class="btn btn-danger btn-lg">Stop</button>
+                    </a>
+                </span>
                 <span class="login100-form-title p-b-41">
-                <a href="/trang-chu">
-                    <button type="button" class="btn btn-primary btn-lg">Trang Chủ</button>
-                </a>
-            </span>
+                    <a href="/trang-chu">
+                        <button type="button" class="btn btn-primary btn-lg">Trang Chủ</button>
+                    </a>
+                </span>
             </div>
 
         </c:if>
-        <c:if test="${user.role ne 1}">
+        <c:if test="${empty user}">
             <div class="col-12">
                 <div class="alert alert-danger text-center">
                     <h3>
                         Bạn cần quyền Admin để truy cập trang này
                     </h3>
+                    <a href="/">
+                        <button type="button" class="btn btn-primary btn-lg">Login</button>
+                    </a>
+                </div>
+            </div>
+        </c:if>
+        <c:if test="${not empty user&&user.role ne 1}">
+            <div class="col-12">
+                <div class="alert alert-danger text-center">
+                    <h3>
+                        Bạn cần quyền Admin để truy cập trang này
+                    </h3>
+                    <a href="/trang-chu">
+                        <button type="button" class="btn btn-primary btn-lg">Back</button>
+                    </a>
                 </div>
             </div>
         </c:if>

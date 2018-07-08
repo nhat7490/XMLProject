@@ -2,8 +2,10 @@ package com.xml.controller;
 
 import com.xml.model.Movie;
 import com.xml.model.Movies;
+import com.xml.service.CrawlService;
 import com.xml.service.MovieService;
 import com.xml.utils.JAXBUtils;
+import com.xml.validator.Validate;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,8 +22,11 @@ public class PageController {
 
     private final MovieService movieService;
 
-    public PageController(MovieService movieService) {
+    private final Validate validate;
+
+    public PageController(MovieService movieService, Validate validate) {
         this.movieService = movieService;
+        this.validate = validate;
     }
 
     @GetMapping("/trang-chu")
@@ -84,6 +89,7 @@ public class PageController {
 
     @GetMapping("/")
     public ModelAndView loginPage() {
+
         return new ModelAndView("login");
     }
 

@@ -24,16 +24,25 @@ public class ThreadController {
     }
 
     @GetMapping(value = "/crawl", produces = MediaType.APPLICATION_XML_VALUE)
-    public ResponseEntity CrawlingControl(@RequestParam("option") String option) {
+    public ModelAndView CrawlingControl(@RequestParam("option") String option) {
         CrawlService crawlService = new CrawlService(movieService, validate);
-        System.out.println(option);
-        if (option.equals("run")) {
-            CrawlService.flag = true;
-            crawlService.run();
+        if (!CrawlService.check) {
+            if (option.equals("run")) {
+                CrawlService.flag = true;
+                CrawlService.check = true;
+                crawlService.run();
 
-        } else if(option.equals("pause")){
-            CrawlService.flag = false;
+            }
+        } else {
+            if (option.equals("run")) {
+                CrawlService.flag = true;
+
+
+            } else if (option.equals("pause")) {
+                CrawlService.flag = false;
+            }
         }
-        return ResponseEntity.status(HttpStatus.OK).body("");
+
+        return new ModelAndView("crawl");
     }
 }

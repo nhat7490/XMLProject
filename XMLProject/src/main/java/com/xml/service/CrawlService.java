@@ -28,6 +28,7 @@ public class CrawlService extends Thread {
     private final Validate validate;
 
     public static boolean flag = false;
+    public static boolean check = false;
 
     public CrawlService(MovieService movieService, Validate validate) {
         this.movieService = movieService;
@@ -65,7 +66,8 @@ public class CrawlService extends Thread {
                     System.out.println("PHIMMOI WELFORM ERROR");
                 }
                 System.out.println("Phimm moi page: " + i);
-                while(!flag){ }
+                while (!flag) {
+                }
             }
 
             Set<Movie> list = new HashSet<>();
@@ -84,7 +86,8 @@ public class CrawlService extends Thread {
                     System.out.println("VKOOL WELFORM ERROR");
                 }
                 System.out.println("Vkool page: " + i);
-                while(!flag){ }
+                while (!flag) {
+                }
             }
 
             List<Movie> movieList = new ArrayList<>();
@@ -182,6 +185,7 @@ public class CrawlService extends Thread {
             }
             System.out.println("SUCCESS");
             flag = false;
+            check= false;
         }
     }
 }

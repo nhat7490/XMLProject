@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Insertion HTML5 Template</title>
+    <title>Tìm Kiếm</title>
     <!-- load CSS -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
     <!-- Google web font "Open Sans" -->
@@ -82,6 +82,9 @@
             <li></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
+            <c:if test="${user.role eq 1}">
+                <li><a href="/admin"><span class="glyphicon glyphicon-circle-arrow-down"></span> Crawler</a></li>
+            </c:if>
             <c:if test="${not empty user}">
                 <li><a href="/log-out"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                 <li><a href="#"><span></span> Welcome, ${user.firstname}</a></li>
