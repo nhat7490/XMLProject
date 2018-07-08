@@ -44,6 +44,29 @@ public class PageController {
         return new ModelAndView("home");
     }
 
+    @GetMapping("/tim-kiem")
+    public ModelAndView getByTitle(HttpServletRequest request,
+                                   @RequestParam String search,
+                                   @RequestParam(defaultValue = "1") String pageNo) {
+
+        Page<Movie> moviePage = movieService.findMovieByTitle(Integer.parseInt(pageNo), 8, search);
+
+        Movies movies = new Movies();
+        movies.setMovie(moviePage.getContent());
+
+        try {
+            String xmlString = JAXBUtils.marshall(movies);
+            request.setAttribute("RESULT", xmlString);
+        } catch (JAXBException e) {
+            e.printStackTrace();
+        }
+        request.setAttribute("PAGE", moviePage.getTotalPages());
+        request.setAttribute("CURRENTPAGE", pageNo);
+        request.setAttribute("SEARCHVALUE", search);
+
+        return new ModelAndView("search");
+    }
+
     @GetMapping("/thong-tin/{id}")
     public ModelAndView getMovieDetail(HttpServletRequest request, @PathVariable("id") String id) {
 

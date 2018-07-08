@@ -15,7 +15,6 @@
 
     <style>
 
-        /*****************globals*************/
         body {
             font-family: 'open sans';
             overflow-x: hidden;
@@ -233,40 +232,85 @@
 
 <c:set value="${requestScope.ID}" var="id"/>
 <body onload="loadXmlDoc(${id})">
+<c:set value="${sessionScope.USER}" var="user"/>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#"></a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <ul class="nav navbar-nav">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <c:if test="${not empty user}">
+                <li><a href="/log-out"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                <li><a href="#"><span></span> Welcome, ${user.firstname}</a></li>
+            </c:if>
+            <c:if test="${empty user}">
+                <li><a href="/"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </c:if>
+        </ul>
+    </div>
+</nav>
 <div class="container">
-    <div class="card">
-        <div class="container-fliud">
-            <div class="wrapper row">
-                <div class="preview col-md-6">
+    <c:if test="${not empty user}">
+        <div class="card">
+            <div class="container-fliud">
+                <div class="wrapper row">
+                    <div class="preview col-md-6">
 
-                    <div class="preview-pic tab-content">
-                        <div class="tab-pane active" id="pic-1">
-                            <img id="movieImage"/>
+                        <div class="preview-pic tab-content">
+                            <div class="tab-pane active" id="pic-1">
+                                <img id="movieImage"/>
+                            </div>
                         </div>
-                    </div>
 
-                </div>
-                <div class="details col-md-6">
-                    <h2 id="movieTitle" class="product-title">Ready Player One</h2>
-                    <h5 id="movieDirector" class="price"> Đạo Diễn:
-                    </h5>
-                    <h5 id="movieActor" class="price"> Diễn Viên:
-                    </h5>
-                    <h5 id="movieYear" class="price"> Năm:
-                    </h5>
-                    <h5 id="vkoolRate" class="price"> Điểm Vkool:
-                    </h5>
-                    <h5 id="phimmoiRate" class="price"> Điểm Phimmoi:
-                    </h5>
-                    <div class="action">
-                        <a id="phimmoiLink" href="" class="btn btn-info" role="button"><h5>Phimmoi</h5></a>
-                        <a id="vkoolLink" class="btn btn-info" role="button"><h5>Vkool</h5></a>
                     </div>
+                    <div class="details col-md-6">
+                        <h2 id="movieTitle" class="product-title">Ready Player One</h2>
+                        <h5 id="movieDirector" class="price"> Đạo Diễn:
+                        </h5>
+                        <h5 id="movieActor" class="price"> Diễn Viên:
+                        </h5>
+                        <h5 id="movieYear" class="price"> Năm:
+                        </h5>
+                        <h5 id="vkoolRate" class="price"> Điểm Vkool:
+                        </h5>
+                        <h5 id="phimmoiRate" class="price"> Điểm Phimmoi:
+                        </h5>
+                        <div class="action">
+                            <a id="phimmoiLink" href="" class="btn btn-info" role="button"><h5>Phimmoi</h5></a>
+                            <a id="vkoolLink" class="btn btn-info" role="button"><h5>Vkool</h5></a>
+                        </div>
 
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </c:if>
+    <c:if test="${empty user}">
+        <div class="col-12">
+            <div class="alert alert-danger text-center">
+                Bạn cần phải đăng nhập
+            </div>
+        </div>
+    </c:if>
+    <footer class="row">
+        <div class="col-xl-12">
+            <p class="text-center p-4">Copyright &copy;
+                <span class="tm-current-year">2018</span> Your Company Name - Web Design:
+                <a href="http://tooplate.com" class="tm-text-gray">Tooplate</a>
+            </p>
+        </div>
+    </footer>
 </div>
 
 <script>

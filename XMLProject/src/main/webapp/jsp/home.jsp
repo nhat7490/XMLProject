@@ -55,7 +55,8 @@
         .button:hover {
             transform: scale(1.15);
         }
-        h2{
+
+        h2 {
             font-size: 30px;
         }
     </style>
@@ -63,7 +64,7 @@
 </head>
 
 <body>
-<c:set value="${requestScope.USER}" var="user"/>
+<c:set value="${sessionScope.USER}" var="user"/>
 
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
@@ -81,8 +82,13 @@
             <li></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-            <li><span class="glyphicon glyphicon-log-out"></span> Welcome, ${user.firstname}</li>
+            <c:if test="${not empty user}">
+                <li><a href="/log-out"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                <li><a href="#"><span></span> Welcome, ${user.firstname}</a></li>
+            </c:if>
+            <c:if test="${empty user}">
+                <li><a href="/"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </c:if>
         </ul>
     </div>
 </nav>
@@ -95,12 +101,15 @@
 
     <div class="container text-center">
         <div class="tm-search-form-container">
-            <form action="index.html" method="GET" class="form-inline tm-search-form" style="background-color: #1C689A">
+            <form action="/tim-kiem" class="form-inline tm-search-form"
+                  style="background-color: #1C689A">
                 <div class="text-uppercase tm-new-release" style="background-color: #1C689A"></div>
                 <div class="tm-search-box form-group">
-                    <input type="text" name="keyword" class="form-control tm-search-input"
+                    <input type="text" name="search" class="form-control tm-search-input"
                            placeholder="Type your keyword ...">
+                    <%--<a href="/trang-chu/${param.search}">--%>
                     <input type="submit" value="Search" class="form-control tm-search-submit">
+                    <%--</a>--%>
                 </div>
                 <div class="form-group tm-advanced-box">
 
@@ -108,43 +117,57 @@
 
             </form>
         </div>
-
-        <c:if test="${user}">
-            <div id="movieList">
-                <c:set var="xmlDoc" value="${requestScope.RESULT}"/>
-                <c:import charEncoding="UTF-8" url="/xslt/movie-list.xsl" var="xsltDoc"/>
-                <x:transform xml="${xmlDoc}" xslt="${xsltDoc}"/>
-
-            </div>
-            <ul class="pagination pagination-lg">
-                <c:set var="totalPage" value="${requestScope.PAGE}"/>
-                <c:set var="currentPage" value="${requestScope.CURRENTPAGE}"/>
-
-                    <%--<c:out value="${currentPage}"/>--%>
-                    <%--<c:out value="${totalPage}"/>--%>
-
-                    <%--current page less than 7--%>
-                <c:if test="${currentPage lt 7}">
-                    <li><a>Previous</a></li>
-                    <c:forEach var="i" begin="1" end="7">
-                        <li><a href="/trang-chu?page=${i}">${i}</a></li>
-                    </c:forEach>
-                    <li><a>Next</a></li>
-                </c:if>
-
-                    <%--current page greater than or equal 7--%>
-                <c:if test="${currentPage ge 7}">
-                    <li><a href="/trang-chu?page=${currentPage-1}">Previous</a></li>
-                    <c:forEach var="i" begin="${currentPage - 3}" end="${currentPage + 3}">
-                        <li><a href="/trang-chu?page=${i}">${i}</a></li>
-                    </c:forEach>
-                    <li><a href="/trang-chu?page=${currentPage+1}">Next</a></li>
-                </c:if>
-
-            </ul>
-        </c:if>
+        <c:set var="movieList" value="${requestScope.RESULT}"/>
         <c:if test="${not empty user}">
-            <div class="class text-center danger"></div>
+            <c:if test="${not empty movieList}">
+                <div id="movieList">
+                    <c:set var="xmlDoc" value="${requestScope.RESULT}"/>
+                    <c:import charEncoding="UTF-8" url="/xslt/movie-list.xsl" var="xsltDoc"/>
+                    <x:transform xml="${xmlDoc}" xslt="${xsltDoc}"/>
+
+                </div>
+                <ul class="pagination pagination-lg">
+                    <c:set var="totalPage" value="${requestScope.PAGE}"/>
+                    <c:set var="currentPage" value="${requestScope.CURRENTPAGE}"/>
+
+                        <%--<c:out value="${currentPage}"/>--%>
+                        <%--<c:out value="${totalPage}"/>--%>
+
+                        <%--current page less than 7--%>
+                    <c:if test="${currentPage lt 7}">
+                        <li><a>Previous</a></li>
+                        <c:forEach var="i" begin="1" end="7">
+                            <li><a href="/trang-chu?page=${i}">${i}</a></li>
+                        </c:forEach>
+                        <li><a>Next</a></li>
+                    </c:if>
+
+                        <%--current page greater than or equal 7--%>
+                    <c:if test="${currentPage ge 7}">
+                        <li><a href="/trang-chu?page=${currentPage-1}">Previous</a></li>
+                        <c:forEach var="i" begin="${currentPage - 3}" end="${currentPage + 3}">
+                            <li><a href="/trang-chu?page=${i}">${i}</a></li>
+                        </c:forEach>
+                        <li><a href="/trang-chu?page=${currentPage+1}">Next</a></li>
+                    </c:if>
+
+                </ul>
+            </c:if>
+            <c:if test="${empty movieList}">
+                <div class="col-12">
+                    <div class="alert alert-danger text-center">
+                        Không tìm thấy thông tin bạn cần
+                    </div>
+                </div>
+            </c:if>
+        </c:if>
+        <c:if test="${empty user}">
+            <div class="col-12">
+                <div class="alert alert-danger text-center">
+                    Bạn cần phải đăng nhập
+                </div>
+            </div>
+
         </c:if>
 
         <footer class="row">

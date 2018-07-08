@@ -6,6 +6,7 @@ import com.xml.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -27,12 +28,6 @@ public class UserController {
                                 @RequestParam String username,
                                 @RequestParam String password) {
 
-//        String username = request.getParameter("username");
-//        String password = request.getParameter("password");
-
-        System.out.println(username);
-        System.out.println(password);
-
         User user = userService.findUser(username, password);
 
         if (user != null) {
@@ -44,5 +39,13 @@ public class UserController {
         }
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
 
+    }
+
+    @GetMapping("/log-out")
+    public ModelAndView logout(HttpServletRequest request){
+
+        HttpSession session = request.getSession();
+        session.invalidate();
+        return new ModelAndView("login");
     }
 }

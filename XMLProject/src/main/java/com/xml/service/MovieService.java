@@ -42,8 +42,14 @@ public class MovieService {
         return movieRepository.findAll(pageable);
     }
 
-    public Movie getById(BigInteger id){
+    public Movie getById(BigInteger id) {
         return movieRepository.findById(id);
+    }
+
+    public Page<Movie> findMovieByTitle(int page, int moviePerPage, String search) {
+        int actualPage = page - 1;
+        Pageable pageable = PageRequest.of(actualPage, moviePerPage);
+        return movieRepository.findByTitleLike(pageable, "%" + search + "%");
     }
 
 
