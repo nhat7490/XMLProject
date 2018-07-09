@@ -180,7 +180,7 @@ public class CrawlService extends Thread {
                 } catch (SAXException | JAXBException | IOException e) {
                     System.out.println("Failed to validate " + movie.getTitle() + " because of quality: " + movie.getQuality());
                 } catch (Exception e) {
-                    System.out.println("lỗi db");
+                    System.out.println("Failed ta save to db");
                 }
             }
             System.out.println("SUCCESS");

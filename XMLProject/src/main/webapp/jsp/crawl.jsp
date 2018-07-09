@@ -5,6 +5,7 @@
 
 <head>
     <title>Crawler</title>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
@@ -30,6 +31,37 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     <!--===============================================================================================-->
+
+    <style>
+        .loader {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            width: 120px;
+            height: 120px;
+            -webkit-animation: spin 2s linear infinite; /* Safari */
+            animation: spin 2s linear infinite;
+        }
+
+        /* Safari */
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -48,16 +80,28 @@
                 </span>
                 <span class="login100-form-title p-b-41">
                     <a href="/crawl?option=run">
-                        <button type="button" class="btn btn-success btn-lg">Run</button>
+                        <button type="button" class="btn btn-success btn-lg" onclick="createLoading()">Run</button>
                     </a>
                     <a href="/crawl?option=pause">
-                        <button type="button" class="btn btn-danger btn-lg">Stop</button>
+                        <button type="button" class="btn btn-danger btn-lg" onclick="removeLoading()">Stop</button>
                     </a>
                 </span>
                 <span class="login100-form-title p-b-41">
                     <a href="/trang-chu">
                         <button type="button" class="btn btn-primary btn-lg">Trang Chủ</button>
                     </a>
+                </span>
+                <span id="loading" class="login100-form-title p-b-41">
+                    <div id="fountainG" style="visibility: hidden">
+	                    <div id="fountainG_1" class="fountainG"></div>
+                        <div id="fountainG_2" class="fountainG"></div>
+	                    <div id="fountainG_3" class="fountainG"></div>
+	                    <div id="fountainG_4" class="fountainG"></div>
+	                    <div id="fountainG_5" class="fountainG"></div>
+                        <div id="fountainG_6" class="fountainG"></div>
+	                    <div id="fountainG_7" class="fountainG"></div>
+                        <div id="fountainG_8" class="fountainG"></div>
+                    </div>
                 </span>
             </div>
 
@@ -88,6 +132,19 @@
         </c:if>
     </div>
 </div>
+
+<script>
+
+    function createLoading() {
+        var div = document.getElementById("fountainG");
+        div.style.visibility="visible";
+    }
+
+    function removeLoading() {
+        var div = document.getElementById("fountainG");
+        div.style.visibility="hidden";
+    }
+</script>
 
 </body>
 
