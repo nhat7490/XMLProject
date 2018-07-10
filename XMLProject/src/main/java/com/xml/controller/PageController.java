@@ -89,7 +89,6 @@ public class PageController {
 
     @GetMapping("/")
     public ModelAndView loginPage() {
-
         return new ModelAndView("login");
     }
 

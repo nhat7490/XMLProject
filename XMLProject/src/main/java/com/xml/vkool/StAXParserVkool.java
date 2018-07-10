@@ -7,6 +7,8 @@ package com.xml.vkool;
 
 import com.xml.model.Movie;
 import com.xml.crawler.Crawler;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 import javax.xml.stream.XMLInputFactory;
@@ -30,6 +32,8 @@ public class StAXParserVkool {
 
     private static String begin = "movie-meta-info";
     private static String end = "<script type=\"text/javascript\">";
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(StAXParserVkool.class);
 
     public static List<Movie> StAXCursorParserVkool(InputStream is) throws XMLStreamException {
         XMLInputFactory factory = XMLInputFactory.newInstance();
@@ -156,7 +160,8 @@ public class StAXParserVkool {
                     }
 
                 } catch (XMLStreamException e) {
-                    System.out.println("VKOOL MOVIE" + movie.getTitle() + " DETAIL WELLFORM ERROR");
+                    LOGGER.error("VKOOL MOVIE " + movie.getTitle() + " DETAIL WELLFORM ERROR");
+                    System.out.println("VKOOL MOVIE " + movie.getTitle() + " DETAIL WELLFORM ERROR");
                     if (foundActor && foundDirector && foundLink && foundPoster
                             && foundQuality && foundRate && foundTitle && foundYear) {
 

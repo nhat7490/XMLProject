@@ -5,6 +5,8 @@ import com.xml.crawler.Crawler;
 import com.xml.model.Movie;
 import com.xml.validator.Validate;
 import com.xml.vkool.StAXParserVkool;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.xml.sax.SAXException;
 
@@ -23,6 +25,7 @@ import java.util.Set;
 @Service
 public class CrawlService extends Thread {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(CrawlService.class);
     private final MovieService movieService;
 
     private final Validate validate;
@@ -63,6 +66,7 @@ public class CrawlService extends Thread {
                 try {
                     phimmoiList.addAll(StAXParserBilutv.StAXCursorParserBilutv(is));
                 } catch (XMLStreamException ex) {
+                    LOGGER.error("PHIMMOI WELFORM ERROR, PAGE: " + i);
                     System.out.println("PHIMMOI WELFORM ERROR");
                 }
                 System.out.println("Phimm moi page: " + i);
@@ -83,6 +87,7 @@ public class CrawlService extends Thread {
                 try {
                     vkoolList.addAll(StAXParserVkool.StAXCursorParserVkool(is));
                 } catch (XMLStreamException ex) {
+                    LOGGER.error("VKOOL WELFORM ERROR, PAGE: " + i);
                     System.out.println("VKOOL WELFORM ERROR");
                 }
                 System.out.println("Vkool page: " + i);
@@ -147,24 +152,23 @@ public class CrawlService extends Thread {
                 setMovie.add(movie);
             }
 
-            System.out.println("LIST MOVIE");
-            for (Movie movieDetail : setMovie) {
+//            System.out.println("LIST MOVIE");
+//            for (Movie movieDetail : setMovie) {
+//
+//                System.out.println("Title: " + movieDetail.getTitle());
+//                System.out.println("Director: " + movieDetail.getDirector());
+//                System.out.println("Actor: " + movieDetail.getActors());
+//                System.out.println("Vkool Rate: " + movieDetail.getVkoolRate());
+//                System.out.println("Phimmoi Rate: " + movieDetail.getBiluRate());
+//                System.out.println("Phimmoi Link: " + movieDetail.getBiluLink());
+//                System.out.println("Vkool Link: " + movieDetail.getVkoolLink());
+//                System.out.println("Poster: " + movieDetail.getPosterLink());
+//                System.out.println("Quality: " + movieDetail.getQuality());
+//                System.out.println("Year: " + movieDetail.getYearPublic());
+//                System.out.println("Rate: " + movieDetail.getSelfRate());
+//                System.out.println("-------------------------");
+//            }
 
-                System.out.println("Title: " + movieDetail.getTitle());
-                System.out.println("Director: " + movieDetail.getDirector());
-                System.out.println("Actor: " + movieDetail.getActors());
-                System.out.println("Vkool Rate: " + movieDetail.getVkoolRate());
-                System.out.println("Phimmoi Rate: " + movieDetail.getBiluRate());
-                System.out.println("Phimmoi Link: " + movieDetail.getBiluLink());
-                System.out.println("Vkool Link: " + movieDetail.getVkoolLink());
-                System.out.println("Poster: " + movieDetail.getPosterLink());
-                System.out.println("Quality: " + movieDetail.getQuality());
-                System.out.println("Year: " + movieDetail.getYearPublic());
-                System.out.println("Rate: " + movieDetail.getSelfRate());
-                System.out.println("-------------------------");
-            }
-
-//            movieService.saveAll(setMovie);
             for (Movie movie : setMovie) {
                 movie.setId(BigInteger.valueOf(0));
                 try {
@@ -178,8 +182,10 @@ public class CrawlService extends Thread {
                     movie.setId(null);
                     movieService.save(movie);
                 } catch (SAXException | JAXBException | IOException e) {
+                    LOGGER.error("Failed to validate " + movie.getTitle() + " because of quality: " + movie.getQuality());
                     System.out.println("Failed to validate " + movie.getTitle() + " because of quality: " + movie.getQuality());
                 } catch (Exception e) {
+                    LOGGER.error("Failed ta save to db");
                     System.out.println("Failed ta save to db");
                 }
             }

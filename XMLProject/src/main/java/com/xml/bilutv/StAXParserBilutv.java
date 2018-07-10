@@ -2,6 +2,9 @@ package com.xml.bilutv;
 
 import com.xml.crawler.Crawler;
 import com.xml.model.Movie;
+import com.xml.vkool.StAXParserVkool;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamConstants;
@@ -15,6 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StAXParserBilutv {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(StAXParserVkool.class);
 
     private static String begin = "class=\"movie-info\"";
     private static String end = "<!-- / Thông tin phim -->";
@@ -88,8 +93,7 @@ public class StAXParserBilutv {
                     String htmlContent = Crawler.htmlContent;
 
 //                    System.out.println("-----------PHIM MOI-----------------");
-//                    System.out.println();
-//                    System.out.println(htmlContent);
+//
                     InputStream info = new ByteArrayInputStream(htmlContent.getBytes(StandardCharsets.UTF_8));
 
                     movieInfo = StAXCursorParserInfo(info);
