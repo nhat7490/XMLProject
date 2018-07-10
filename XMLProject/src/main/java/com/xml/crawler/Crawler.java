@@ -6,6 +6,9 @@
 package com.xml.crawler;
 
 import com.sun.org.apache.xerces.internal.util.URI;
+import com.xml.bilutv.StAXParserBilutv;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -22,6 +25,8 @@ public class Crawler {
 
     public static String htmlContent = "";
     public static int pageCount = 0;
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(Crawler.class);
 
     public static void parseHTML(String uri, String beginSign, String endSign) {
         htmlContent = "";
@@ -55,9 +60,9 @@ public class Crawler {
             }
             is.close();
         } catch (URI.MalformedURIException ex) {
-            ex.printStackTrace();
+            LOGGER.error("CRAWLING ERROR");
         } catch (IOException ex) {
-            ex.printStackTrace();
+            LOGGER.error("CRAWLING ERROR");
         }
     }
 

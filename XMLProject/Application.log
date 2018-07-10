@@ -51,3 +51,10 @@
 2018-07-11 06:14:13.151  INFO 4596 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
 2018-07-11 06:14:13.157  INFO 4596 --- [main] com.xml.XmlProjectApplication            : Started XmlProjectApplication in 10.123 seconds (JVM running for 12.502)
 2018-07-11 06:14:39.344  INFO 4596 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-07-11 06:29:22.176 ERROR 4596 --- [http-nio-8080-exec-2] com.xml.service.CrawlService             : PHIMMOI WELFORM ERROR, PAGE: 8
+2018-07-11 06:38:39.919  INFO 4596 --- [Thread-25] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2e4b8173: startup date [Wed Jul 11 06:14:04 ICT 2018]; root of context hierarchy
+2018-07-11 06:38:39.922  INFO 4596 --- [Thread-25] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-07-11 06:38:39.931  INFO 4596 --- [Thread-25] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2018-07-11 06:38:39.933  INFO 4596 --- [Thread-25] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-07-11 06:38:39.937  INFO 4596 --- [Thread-25] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2018-07-11 06:38:39.988  INFO 4596 --- [Thread-25] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

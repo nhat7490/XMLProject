@@ -19,7 +19,7 @@ import java.util.List;
 
 public class StAXParserBilutv {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(StAXParserVkool.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(StAXParserBilutv.class);
 
     private static String begin = "class=\"movie-info\"";
     private static String end = "<!-- / Thông tin phim -->";
@@ -61,14 +61,9 @@ public class StAXParserBilutv {
 
                     movie.setBiluLink(uri.trim());
 //                    System.out.println(movie.getBiluLink());
-                    try {
-                        String name = getNodeStaXValue(reader, "a", "", "title")
-                                .split("-")[0];
-                        movie.setTitle(name.trim());
-
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
+                    String name = getNodeStaXValue(reader, "a", "", "title")
+                            .split("-")[0];
+                    movie.setTitle(name.trim());
 
 //                    System.out.println(movie.getTitle());
 
@@ -204,7 +199,7 @@ public class StAXParserBilutv {
                             year = new BigInteger(reader.getText().trim());
                             movie.setYearPublic(year);
                         } catch (Exception e) {
-                            System.out.println("WRONG FORMAT FOR YEAR");
+                            LOGGER.error("WONG FOR YEAR");
                         }
 
 //                        System.out.println(movie.getYearPublic());

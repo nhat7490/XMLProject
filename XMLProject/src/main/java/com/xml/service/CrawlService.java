@@ -67,9 +67,8 @@ public class CrawlService extends Thread {
                     phimmoiList.addAll(StAXParserBilutv.StAXCursorParserBilutv(is));
                 } catch (XMLStreamException ex) {
                     LOGGER.error("PHIMMOI WELFORM ERROR, PAGE: " + i);
-                    System.out.println("PHIMMOI WELFORM ERROR");
                 }
-                System.out.println("Phimm moi page: " + i);
+                LOGGER.error("Crawling Phimmoi page: " + i);
                 while (!flag) {
                 }
             }
@@ -88,9 +87,8 @@ public class CrawlService extends Thread {
                     vkoolList.addAll(StAXParserVkool.StAXCursorParserVkool(is));
                 } catch (XMLStreamException ex) {
                     LOGGER.error("VKOOL WELFORM ERROR, PAGE: " + i);
-                    System.out.println("VKOOL WELFORM ERROR");
                 }
-                System.out.println("Vkool page: " + i);
+                LOGGER.info("Crawling Vkool page: " + i);
                 while (!flag) {
                 }
             }
@@ -183,10 +181,8 @@ public class CrawlService extends Thread {
                     movieService.save(movie);
                 } catch (SAXException | JAXBException | IOException e) {
                     LOGGER.error("Failed to validate " + movie.getTitle() + " because of quality: " + movie.getQuality());
-                    System.out.println("Failed to validate " + movie.getTitle() + " because of quality: " + movie.getQuality());
                 } catch (Exception e) {
                     LOGGER.error("Failed ta save to db");
-                    System.out.println("Failed ta save to db");
                 }
             }
             System.out.println("SUCCESS");

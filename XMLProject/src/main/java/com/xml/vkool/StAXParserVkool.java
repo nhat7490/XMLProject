@@ -161,7 +161,6 @@ public class StAXParserVkool {
 
                 } catch (XMLStreamException e) {
                     LOGGER.error("VKOOL MOVIE " + movie.getTitle() + " DETAIL WELLFORM ERROR");
-                    System.out.println("VKOOL MOVIE " + movie.getTitle() + " DETAIL WELLFORM ERROR");
                     if (foundActor && foundDirector && foundLink && foundPoster
                             && foundQuality && foundRate && foundTitle && foundYear) {
 
