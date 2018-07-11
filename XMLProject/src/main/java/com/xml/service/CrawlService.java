@@ -57,6 +57,8 @@ public class CrawlService extends Thread {
 
 
             for (int i = 1; i <= 20; i++) {
+                LOGGER.info("Crawling Phimmoi page: " + i);
+
                 String url = phimmoiHtml + "page/" + i;
 
                 Crawler.parseHTML(url, phimmoiBegin, phimmoiEnd);
@@ -68,7 +70,6 @@ public class CrawlService extends Thread {
                 } catch (XMLStreamException ex) {
                     LOGGER.error("PHIMMOI WELFORM ERROR, PAGE: " + i);
                 }
-                LOGGER.info("Crawling Phimmoi page: " + i);
                 while (!flag) {
                 }
             }
@@ -76,6 +77,8 @@ public class CrawlService extends Thread {
             Set<Movie> list = new HashSet<>();
 
             for (int i = 1; i <= 20; i++) {
+                LOGGER.info("Crawling Vkool page: " + i);
+
                 String url = vkoolHtml + "" + i;
 
                 Crawler.parseHTML(url, vkoolBegin, vkoolEnd);
@@ -88,7 +91,6 @@ public class CrawlService extends Thread {
                 } catch (XMLStreamException ex) {
                     LOGGER.error("VKOOL WELFORM ERROR, PAGE: " + i);
                 }
-                LOGGER.info("Crawling Vkool page: " + i);
                 while (!flag) {
                 }
             }
