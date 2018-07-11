@@ -289,8 +289,8 @@
                         </h5>
                         <h5 id="phimmoiRate" class="price"> Điểm Phimmoi:
                         </h5>
-                        <div class="action">
-                            <a id="phimmoiLink" href="" class="btn btn-info" role="button"><h5>Phimmoi</h5></a>
+                        <div id="divLink" class="action text-center">
+                            <a id="phimmoiLink" class="btn btn-info" role="button"><h5>Phimmoi</h5></a>
                             <a id="vkoolLink" class="btn btn-info" role="button"><h5>Vkool</h5></a>
                         </div>
 
@@ -391,7 +391,7 @@
                 if (vkoolLink) {
                     vkoolLinkTag.href = vkoolLink;
                 } else {
-                    vkoolLinkTag.disabled = true;
+                    document.getElementById("divLink").removeChild(vkoolLinkTag);
                 }
 
                 //get phimmoi link
@@ -401,7 +401,7 @@
                 if (phimmoiLink) {
                     phmmoiLinkTag.href = phimmoiLink;
                 } else {
-                    phmmoiLinkTag.disabled = true;
+                 document.getElementById("divLink").removeChild(phmmoiLinkTag);
                 }
 
             }

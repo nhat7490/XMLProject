@@ -68,7 +68,7 @@ public class CrawlService extends Thread {
                 } catch (XMLStreamException ex) {
                     LOGGER.error("PHIMMOI WELFORM ERROR, PAGE: " + i);
                 }
-                LOGGER.error("Crawling Phimmoi page: " + i);
+                LOGGER.info("Crawling Phimmoi page: " + i);
                 while (!flag) {
                 }
             }
@@ -182,7 +182,7 @@ public class CrawlService extends Thread {
                 } catch (SAXException | JAXBException | IOException e) {
                     LOGGER.error("Failed to validate " + movie.getTitle() + " because of quality: " + movie.getQuality());
                 } catch (Exception e) {
-                    LOGGER.error("Failed ta save to db");
+                    LOGGER.error("Failed to save to db");
                 }
             }
             System.out.println("SUCCESS");
