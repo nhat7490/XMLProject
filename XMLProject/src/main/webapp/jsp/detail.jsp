@@ -328,7 +328,7 @@
 
                 // Clean xmlString
                 var xmlString = xhttp.responseText;
-                xmlString = xmlString.replace(new RegExp(' xmlns(:.*?)?=(".*?")'), '');
+                // xmlString = xmlString.replace(new RegExp(' xmlns(:.*?)?=(".*?")'), '');
                 console.log(xmlString);
 
                 // Create parser
@@ -337,20 +337,20 @@
                 var xmlDoc = parser.parseFromString(xmlString, "text/xml");
 
                 // Get model NodeSet
-                var movies = xmlDoc.evaluate('//movie', xmlDoc, null, XPathResult.ANY_TYPE, null);
+                var movies = xmlDoc.evaluate("//*[local-name()='movie']", xmlDoc, null, XPathResult.ANY_TYPE, null);
 
                 //Get single movie
                 var movie = movies.iterateNext();
 
                 //get poster
                 var imgTag = document.getElementById("movieImage");
-                var imgLink = xmlDoc.evaluate('poster_link', movie, null, XPathResult.STRING_TYPE, null).stringValue;
+                var imgLink = xmlDoc.getElementsByTagName("poster_link");
                 console.log(imgLink);
                 imgTag.src = imgLink;
 
                 //get Title
                 var titleTag = document.getElementById("movieTitle");
-                var title = xmlDoc.evaluate('title', movie, null, XPathResult.STRING_TYPE, null).stringValue;
+                var title = xmlDoc.evaluate("[local-name()='title']", movie, null, XPathResult.STRING_TYPE, null).stringValue;
                 console.log(title);
                 titleTag.innerHTML = title;
 

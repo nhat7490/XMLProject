@@ -28,28 +28,28 @@ public class ThreadController {
     @GetMapping(value = "/crawl", produces = MediaType.APPLICATION_XML_VALUE)
     public ModelAndView CrawlingControl(HttpServletRequest request, @RequestParam("option") String option) {
         CrawlService crawlService = new CrawlService(movieService, validate);
-        request.getSession().setAttribute("FLAG", CrawlService.flag);
-        if (!CrawlService.check) {
+//        if (!CrawlService.check) {
             if (option.equals("run")) {
                 CrawlService.flag = true;
                 CrawlService.check = true;
                 crawlService.run();
 
             }
-        } else {
-            if (option.equals("run")) {
-                CrawlService.flag = true;
-                while (true) {
-
-                }
-
-            } else if (option.equals("pause")) {
+//        } else {
+//            if (option.equals("run")) {
+//                CrawlService.flag = true;
+//                while (true) {
+//
+//                }
+//
+//            }
+            else if (option.equals("pause")) {
                 CrawlService.flag = false;
-                while (true) {
-
-                }
+//                while (true) {
+//
+//                }
             }
-        }
+//        }
 
         return new ModelAndView("crawl");
     }

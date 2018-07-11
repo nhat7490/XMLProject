@@ -110,9 +110,7 @@
                 <div class="tm-search-box form-group">
                     <input type="text" name="search" class="form-control tm-search-input"
                            placeholder="Type your keyword ...">
-                    <%--<a href="/trang-chu/${param.search}">--%>
                     <input type="submit" value="Search" class="form-control tm-search-submit">
-                    <%--</a>--%>
                 </div>
                 <div class="form-group tm-advanced-box">
 

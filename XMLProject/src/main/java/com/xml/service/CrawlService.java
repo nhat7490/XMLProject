@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.Set;
 
 @Service
-public class CrawlService extends Thread {
+public class CrawlService{
 
     private static final Logger LOGGER = LoggerFactory.getLogger(CrawlService.class);
     private final MovieService movieService;
@@ -38,9 +38,8 @@ public class CrawlService extends Thread {
         this.validate = validate;
     }
 
-    private static final String SCHEMA = "static/xslt/movie.xsd";
+    private static final String SCHEMA = "static/xslt/Movies.xsd";
 
-    @Override
     public void run() {
         while (flag) {
             String phimmoiHtml = "http://www.phimmoi.com/phim-le/";
@@ -56,7 +55,7 @@ public class CrawlService extends Thread {
             List<Movie> phimmoiList = new ArrayList<>();
 
 
-            for (int i = 1; i <= 20; i++) {
+            for (int i = 1; i <= 3 && flag; i++) {
                 LOGGER.info("Crawling Phimmoi page: " + i);
 
                 String url = phimmoiHtml + "page/" + i;
@@ -70,13 +69,11 @@ public class CrawlService extends Thread {
                 } catch (XMLStreamException ex) {
                     LOGGER.error("PHIMMOI WELFORM ERROR, PAGE: " + i);
                 }
-                while (!flag) {
-                }
             }
 
             Set<Movie> list = new HashSet<>();
 
-            for (int i = 1; i <= 20; i++) {
+            for (int i = 1; i <= 3 && flag; i++) {
                 LOGGER.info("Crawling Vkool page: " + i);
 
                 String url = vkoolHtml + "" + i;
@@ -91,8 +88,7 @@ public class CrawlService extends Thread {
                 } catch (XMLStreamException ex) {
                     LOGGER.error("VKOOL WELFORM ERROR, PAGE: " + i);
                 }
-                while (!flag) {
-                }
+
             }
 
             List<Movie> movieList = new ArrayList<>();
@@ -187,7 +183,7 @@ public class CrawlService extends Thread {
                     LOGGER.error("Failed to save to db");
                 }
             }
-            System.out.println("SUCCESS");
+            LOGGER.info("SAVE TO DB SUCCESSFUL");
             flag = false;
             check= false;
         }
