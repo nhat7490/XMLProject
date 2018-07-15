@@ -20,42 +20,69 @@
 <div class="wrapper">
     <div class="header">
         <div class="header-items">
-            <div class="header-item">
-                <i class="icon ion-md-code-download"></i>
-                <span>Crawler</span>
-            </div>
-            <div class="header-item">
-                <i class="icon ion-ios-log-out"></i>
-                <span>Logout</span>
-            </div>
-            <div class="header-item">
-                <span>Welcome, Nhat</span>
-            </div>
+            <c:if test="${user.role eq 1}">
+                <div class="header-item">
+                    <a href="/admin">
+                        <i class="icon ion-md-code-download"></i>
+                        <span>Crawler</span>
+                    </a>
+                </div>
+            </c:if>
+            <c:if test="${not empty user}">
+                <div class="header-item">
+                    <a href="/log-out">
+                        <i class="icon ion-ios-log-out"></i>
+                        <span>Đăng Xuất</span>
+                    </a>
+                </div>
+                <div class="header-item">
+                    <span>Xin Chào, ${user.firstname}</span>
+                </div>
+            </c:if>
+            <c:if test="${empty user}">
+                <div class="header-item">
+                    <a href="/">
+                        <i class="icon ion-ios-log-in"></i>
+                        <span>Đăng Nhập</span>
+                    </a>
+                </div>
+            </c:if>
+
         </div>
     </div>
-    <div class="body">
-        <div class="content">
-            <div class="movie-image" id="movieImage">
-            </div>
-            <div class="movie-description">
-                <span id="movieTitle"></span>
-                <span id="movieDirector">Đạo Diễn: </span>
-                <span id="movieActor">Diễn Viên: </span>
-                <span id="movieYear">Năm: </span>
-                <span id="vkoolRate">Điểm Vkool: </span>
-                <span id="phimmoiRate">Điểm Phimmoi: </span>
-                <div id="divLink">
-                    <a id="phimmoiLink">
-                        <button style="padding: 8%;">Phimmoi</button>
-                    </a>
-                    <a id="vkoolLink">
-                        <button style="padding: 8%;">Vkool</button>
-                    </a>
+    <c:if test="${not empty user}">
+        <div class="body">
+            <div class="content">
+                <div class="movie-image" id="movieImage">
+                </div>
+                <div class="movie-description">
+                    <span id="movieTitle"></span>
+                    <span id="movieDirector">Đạo Diễn: </span>
+                    <span id="movieActor">Diễn Viên: </span>
+                    <span id="movieYear">Năm: </span>
+                    <span id="vkoolRate">Điểm Vkool: </span>
+                    <span id="phimmoiRate">Điểm Phimmoi: </span>
+                    <div id="divLink">
+                        <a id="phimmoiLink">
+                            <button style="padding: 8%;">Phimmoi</button>
+                        </a>
+                        <a id="vkoolLink">
+                            <button style="padding: 8%;">Vkool</button>
+                        </a>
 
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </c:if>
+    <c:if test="${empty user}">
+        <div class="body w3-container w3-center">
+            <div class="alert">
+                <h3><strong>Bạn cần phải đăng nhập</strong></h3>
+            </div>
+        </div>
+    </c:if>
+
 </div>
 
 <script>
@@ -81,7 +108,7 @@
                 var imgTag = document.getElementById("movieImage");
                 var imgLink = xmlDoc.getElementsByTagName("poster_link")[0].textContent;
                 console.log(imgLink);
-                imgTag.style.background = "url('"+imgLink+"') no-repeat center";
+                imgTag.style.background = "url('" + imgLink + "') no-repeat center";
                 imgTag.style.backgroundSize = 'contain';
 
                 //get Title

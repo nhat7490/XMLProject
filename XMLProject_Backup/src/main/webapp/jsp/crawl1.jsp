@@ -257,7 +257,7 @@
         <c:if test="${empty user}">
             <div class="col-12">
                 <div class="alert alert-danger text-center">
-                    <h3>
+                    <h3 >
                         Bạn cần quyền Admin để truy cập trang này
                     </h3>
                     <a href="/">
