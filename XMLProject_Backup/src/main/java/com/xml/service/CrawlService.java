@@ -185,6 +185,7 @@ public class CrawlService{
             }
             LOGGER.info("SAVE TO DB SUCCESSFUL");
             flag = false;
+            check = false;
         }
     }
 }

@@ -1384,3 +1384,563 @@ Verify the connector's configuration, identify and stop any process that's liste
 2018-07-15 10:19:56.839  INFO 10543 --- [http-nio-8080-exec-5] com.xml.service.CrawlService             : Crawling Phimmoi page: 1
 2018-07-15 10:20:27.422  INFO 10543 --- [http-nio-8080-exec-5] com.xml.service.CrawlService             : Crawling Phimmoi page: 2
 2018-07-15 10:21:37.906  INFO 10543 --- [http-nio-8080-exec-5] com.xml.service.CrawlService             : Crawling Phimmoi page: 3
+2018-07-15 10:22:52.009  INFO 10543 --- [http-nio-8080-exec-5] com.xml.service.CrawlService             : Crawling Phimmoi page: 4
+2018-07-15 10:23:40.115  INFO 10543 --- [http-nio-8080-exec-5] com.xml.service.CrawlService             : Crawling Phimmoi page: 5
+2018-07-15 10:23:46.938  INFO 10543 --- [Thread-18] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4b5d6a01: startup date [Sun Jul 15 10:12:25 ICT 2018]; root of context hierarchy
+2018-07-15 10:23:46.942  INFO 10543 --- [Thread-18] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-07-15 10:23:46.943  INFO 10543 --- [Thread-18] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2018-07-15 10:23:46.946  INFO 10543 --- [Thread-18] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-07-15 10:23:46.947  INFO 10543 --- [Thread-18] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2018-07-15 10:23:46.963  INFO 10543 --- [Thread-18] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2018-07-15 10:24:01.480  INFO 11095 --- [main] com.xml.XmlProjectApplication            : Starting XmlProjectApplication on nhat with PID 11095 (/DATA/FPT/XMLProject/XMLProject_Backup/target/classes started by nhat in /DATA/FPT/XMLProject/XMLProject_Backup)
+2018-07-15 10:24:01.487  INFO 11095 --- [main] com.xml.XmlProjectApplication            : No active profile set, falling back to default profiles: default
+2018-07-15 10:24:01.576  INFO 11095 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3ba9ad43: startup date [Sun Jul 15 10:24:01 ICT 2018]; root of context hierarchy
+2018-07-15 10:24:03.903  INFO 11095 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$8f9cdf5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-07-15 10:24:04.563  INFO 11095 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-07-15 10:24:04.628  INFO 11095 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-07-15 10:24:04.628  INFO 11095 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-07-15 10:24:04.636  INFO 11095 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2018-07-15 10:24:05.038  INFO 11095 --- [localhost-startStop-1] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2018-07-15 10:24:05.044  INFO 11095 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-07-15 10:24:05.467  INFO 11095 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-07-15 10:24:05.475  INFO 11095 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-07-15 10:24:05.477  INFO 11095 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-07-15 10:24:05.477  INFO 11095 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-07-15 10:24:05.478  INFO 11095 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-07-15 10:24:05.775  INFO 11095 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-07-15 10:24:06.666  INFO 11095 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-07-15 10:24:06.728  INFO 11095 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-07-15 10:24:07.658  INFO 11095 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-07-15 10:24:08.591  WARN 11095 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-07-15 10:24:08.980  INFO 11095 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-07-15 10:24:08.982  INFO 11095 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-07-15 10:24:08.990  INFO 11095 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-07-15 10:24:09.042  INFO 11095 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-07-15 10:24:09.049  INFO 11095 --- [main] com.xml.XmlProjectApplication            : Started XmlProjectApplication in 8.316 seconds (JVM running for 12.083)
+2018-07-15 10:24:11.463  INFO 11095 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-07-15 10:24:19.365  INFO 11095 --- [http-nio-8080-exec-1] com.xml.service.CrawlService             : Crawling Phimmoi page: 1
+2018-07-15 10:24:25.176  INFO 11095 --- [http-nio-8080-exec-3] com.xml.service.CrawlService             : Crawling Phimmoi page: 1
+2018-07-15 10:24:26.931 ERROR 11095 --- [http-nio-8080-exec-1] com.xml.service.CrawlService             : PHIMMOI WELFORM ERROR, PAGE: 1
+2018-07-15 10:24:26.931 ERROR 11095 --- [http-nio-8080-exec-3] com.xml.service.CrawlService             : PHIMMOI WELFORM ERROR, PAGE: 1
+2018-07-15 10:24:26.931  INFO 11095 --- [http-nio-8080-exec-1] com.xml.service.CrawlService             : Crawling Phimmoi page: 2
+2018-07-15 10:24:26.931  INFO 11095 --- [http-nio-8080-exec-3] com.xml.service.CrawlService             : Crawling Phimmoi page: 2
+2018-07-15 10:24:31.602 ERROR 11095 --- [http-nio-8080-exec-3] com.xml.service.CrawlService             : PHIMMOI WELFORM ERROR, PAGE: 2
+2018-07-15 10:24:31.603  INFO 11095 --- [http-nio-8080-exec-3] com.xml.service.CrawlService             : Crawling Phimmoi page: 3
+2018-07-15 10:24:31.607 ERROR 11095 --- [http-nio-8080-exec-1] com.xml.service.CrawlService             : PHIMMOI WELFORM ERROR, PAGE: 2
+2018-07-15 10:24:31.608  INFO 11095 --- [http-nio-8080-exec-1] com.xml.service.CrawlService             : Crawling Phimmoi page: 3
+2018-07-15 10:24:35.564 ERROR 11095 --- [http-nio-8080-exec-1] com.xml.service.CrawlService             : PHIMMOI WELFORM ERROR, PAGE: 3
+2018-07-15 10:24:35.565  INFO 11095 --- [http-nio-8080-exec-1] com.xml.service.CrawlService             : Crawling Phimmoi page: 4
+2018-07-15 10:24:46.959 ERROR 11095 --- [http-nio-8080-exec-3] com.xml.service.CrawlService             : PHIMMOI WELFORM ERROR, PAGE: 3
+2018-07-15 10:24:46.960  INFO 11095 --- [http-nio-8080-exec-3] com.xml.service.CrawlService             : Crawling Phimmoi page: 4
+2018-07-15 10:24:46.980 ERROR 11095 --- [http-nio-8080-exec-1] com.xml.service.CrawlService             : PHIMMOI WELFORM ERROR, PAGE: 4
+2018-07-15 10:24:46.981  INFO 11095 --- [http-nio-8080-exec-1] com.xml.service.CrawlService             : Crawling Phimmoi page: 5
+2018-07-15 10:24:48.015 ERROR 11095 --- [http-nio-8080-exec-3] com.xml.service.CrawlService             : PHIMMOI WELFORM ERROR, PAGE: 4
+2018-07-15 10:24:48.016 ERROR 11095 --- [http-nio-8080-exec-1] com.xml.service.CrawlService             : PHIMMOI WELFORM ERROR, PAGE: 5
+2018-07-15 10:24:48.017  INFO 11095 --- [http-nio-8080-exec-3] com.xml.service.CrawlService             : Crawling Phimmoi page: 5
+2018-07-15 10:24:48.018  INFO 11095 --- [http-nio-8080-exec-1] com.xml.service.CrawlService             : Crawling Phimmoi page: 6
+2018-07-15 10:25:07.594 ERROR 11095 --- [http-nio-8080-exec-3] com.xml.service.CrawlService             : PHIMMOI WELFORM ERROR, PAGE: 5
+2018-07-15 10:25:07.595  INFO 11095 --- [http-nio-8080-exec-3] com.xml.service.CrawlService             : SAVE TO DB SUCCESSFUL
+2018-07-15 10:25:07.607 ERROR 11095 --- [http-nio-8080-exec-1] com.xml.service.CrawlService             : PHIMMOI WELFORM ERROR, PAGE: 6
+2018-07-15 10:25:07.608  INFO 11095 --- [http-nio-8080-exec-1] com.xml.service.CrawlService             : SAVE TO DB SUCCESSFUL
+2018-07-15 10:29:11.223  INFO 11095 --- [Thread-21] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3ba9ad43: startup date [Sun Jul 15 10:24:01 ICT 2018]; root of context hierarchy
+2018-07-15 10:29:11.227  INFO 11095 --- [Thread-21] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-07-15 10:29:11.228  INFO 11095 --- [Thread-21] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2018-07-15 10:29:11.231  INFO 11095 --- [Thread-21] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-07-15 10:29:11.232  INFO 11095 --- [Thread-21] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2018-07-15 10:29:11.247  INFO 11095 --- [Thread-21] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2018-07-15 10:29:17.310  INFO 11344 --- [main] com.xml.XmlProjectApplication            : Starting XmlProjectApplication on nhat with PID 11344 (/DATA/FPT/XMLProject/XMLProject_Backup/target/classes started by nhat in /DATA/FPT/XMLProject/XMLProject_Backup)
+2018-07-15 10:29:17.319  INFO 11344 --- [main] com.xml.XmlProjectApplication            : No active profile set, falling back to default profiles: default
+2018-07-15 10:29:17.525  INFO 11344 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@69b2283a: startup date [Sun Jul 15 10:29:17 ICT 2018]; root of context hierarchy
+2018-07-15 10:29:19.120  INFO 11344 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c2d5aae8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-07-15 10:29:19.471  INFO 11344 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-07-15 10:29:19.499  INFO 11344 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-07-15 10:29:19.499  INFO 11344 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-07-15 10:29:19.504  INFO 11344 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2018-07-15 10:29:19.755  INFO 11344 --- [localhost-startStop-1] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2018-07-15 10:29:19.760  INFO 11344 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-07-15 10:29:20.093  INFO 11344 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-07-15 10:29:20.098  INFO 11344 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-07-15 10:29:20.099  INFO 11344 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-07-15 10:29:20.099  INFO 11344 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-07-15 10:29:20.100  INFO 11344 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-07-15 10:29:20.267  INFO 11344 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-07-15 10:29:20.916  INFO 11344 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-07-15 10:29:20.989  INFO 11344 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-07-15 10:29:21.915  INFO 11344 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-07-15 10:29:22.801  WARN 11344 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-07-15 10:29:23.195  INFO 11344 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-07-15 10:29:23.197  INFO 11344 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-07-15 10:29:23.204  INFO 11344 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-07-15 10:29:23.243  INFO 11344 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-07-15 10:29:23.247  INFO 11344 --- [main] com.xml.XmlProjectApplication            : Started XmlProjectApplication in 6.968 seconds (JVM running for 7.87)
+2018-07-15 10:29:43.832  INFO 11344 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-07-15 10:29:52.518  INFO 11344 --- [http-nio-8080-exec-6] com.xml.service.CrawlService             : Crawling Phimmoi page: 1
+2018-07-15 10:29:56.143  INFO 11344 --- [http-nio-8080-exec-10] com.xml.service.CrawlService             : Crawling Phimmoi page: 1
+2018-07-15 10:29:57.366 ERROR 11344 --- [http-nio-8080-exec-6] com.xml.service.CrawlService             : PHIMMOI WELFORM ERROR, PAGE: 1
+2018-07-15 10:29:57.367  INFO 11344 --- [http-nio-8080-exec-6] com.xml.service.CrawlService             : Crawling Phimmoi page: 2
+2018-07-15 10:30:36.255 ERROR 11344 --- [http-nio-8080-exec-10] com.xml.service.CrawlService             : PHIMMOI WELFORM ERROR, PAGE: 1
+2018-07-15 10:30:36.256  INFO 11344 --- [http-nio-8080-exec-10] com.xml.service.CrawlService             : Crawling Phimmoi page: 2
+2018-07-15 10:30:49.363 ERROR 11344 --- [http-nio-8080-exec-6] com.xml.service.CrawlService             : PHIMMOI WELFORM ERROR, PAGE: 2
+2018-07-15 10:30:49.364  INFO 11344 --- [http-nio-8080-exec-6] com.xml.service.CrawlService             : Crawling Phimmoi page: 3
+2018-07-15 10:30:49.397 ERROR 11344 --- [http-nio-8080-exec-10] com.xml.service.CrawlService             : PHIMMOI WELFORM ERROR, PAGE: 2
+2018-07-15 10:30:49.398  INFO 11344 --- [http-nio-8080-exec-10] com.xml.service.CrawlService             : Crawling Phimmoi page: 3
+2018-07-15 10:30:53.391 ERROR 11344 --- [http-nio-8080-exec-6] com.xml.service.CrawlService             : PHIMMOI WELFORM ERROR, PAGE: 3
+2018-07-15 10:30:53.392  INFO 11344 --- [http-nio-8080-exec-6] com.xml.service.CrawlService             : Crawling Phimmoi page: 4
+2018-07-15 10:31:41.151 ERROR 11344 --- [http-nio-8080-exec-10] com.xml.service.CrawlService             : PHIMMOI WELFORM ERROR, PAGE: 3
+2018-07-15 10:31:41.152  INFO 11344 --- [http-nio-8080-exec-10] com.xml.service.CrawlService             : SAVE TO DB SUCCESSFUL
+2018-07-15 10:31:41.181 ERROR 11344 --- [http-nio-8080-exec-6] com.xml.service.CrawlService             : PHIMMOI WELFORM ERROR, PAGE: 4
+2018-07-15 10:31:41.181  INFO 11344 --- [http-nio-8080-exec-6] com.xml.service.CrawlService             : SAVE TO DB SUCCESSFUL
+2018-07-15 10:33:17.730  INFO 11344 --- [Thread-17] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@69b2283a: startup date [Sun Jul 15 10:29:17 ICT 2018]; root of context hierarchy
+2018-07-15 10:33:17.733  INFO 11344 --- [Thread-17] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-07-15 10:33:17.734  INFO 11344 --- [Thread-17] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2018-07-15 10:33:17.737  INFO 11344 --- [Thread-17] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-07-15 10:33:17.748  INFO 11344 --- [Thread-17] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2018-07-15 10:33:17.760  INFO 11344 --- [Thread-17] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2018-07-15 10:33:22.856  INFO 11597 --- [main] com.xml.XmlProjectApplication            : Starting XmlProjectApplication on nhat with PID 11597 (/DATA/FPT/XMLProject/XMLProject_Backup/target/classes started by nhat in /DATA/FPT/XMLProject/XMLProject_Backup)
+2018-07-15 10:33:22.865  INFO 11597 --- [main] com.xml.XmlProjectApplication            : No active profile set, falling back to default profiles: default
+2018-07-15 10:33:23.017  INFO 11597 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@6fe7aac8: startup date [Sun Jul 15 10:33:23 ICT 2018]; root of context hierarchy
+2018-07-15 10:33:24.554  INFO 11597 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d7e165af] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-07-15 10:33:24.886  INFO 11597 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-07-15 10:33:24.914  INFO 11597 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-07-15 10:33:24.915  INFO 11597 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-07-15 10:33:24.920  INFO 11597 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2018-07-15 10:33:25.182  INFO 11597 --- [localhost-startStop-1] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2018-07-15 10:33:25.186  INFO 11597 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-07-15 10:33:25.514  INFO 11597 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-07-15 10:33:25.519  INFO 11597 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-07-15 10:33:25.520  INFO 11597 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-07-15 10:33:25.520  INFO 11597 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-07-15 10:33:25.520  INFO 11597 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-07-15 10:33:25.683  INFO 11597 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-07-15 10:33:26.341  INFO 11597 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-07-15 10:33:26.411  INFO 11597 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-07-15 10:33:27.438  INFO 11597 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-07-15 10:33:28.380  WARN 11597 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-07-15 10:33:28.804  INFO 11597 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-07-15 10:33:28.806  INFO 11597 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-07-15 10:33:28.814  INFO 11597 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-07-15 10:33:28.857  INFO 11597 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-07-15 10:33:28.862  INFO 11597 --- [main] com.xml.XmlProjectApplication            : Started XmlProjectApplication in 6.865 seconds (JVM running for 7.687)
+2018-07-15 10:33:36.087  INFO 11597 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-07-15 10:33:48.189  INFO 11597 --- [http-nio-8080-exec-7] com.xml.service.CrawlService             : Crawling Phimmoi page: 1
+2018-07-15 10:33:50.856  INFO 11597 --- [http-nio-8080-exec-9] com.xml.service.CrawlService             : Crawling Phimmoi page: 1
+2018-07-15 10:34:18.725 ERROR 11597 --- [http-nio-8080-exec-9] com.xml.service.CrawlService             : PHIMMOI WELFORM ERROR, PAGE: 1
+2018-07-15 10:34:18.726  INFO 11597 --- [http-nio-8080-exec-9] com.xml.service.CrawlService             : Crawling Phimmoi page: 2
+2018-07-15 10:34:18.750 ERROR 11597 --- [http-nio-8080-exec-7] com.xml.service.CrawlService             : PHIMMOI WELFORM ERROR, PAGE: 1
+2018-07-15 10:34:18.751  INFO 11597 --- [http-nio-8080-exec-7] com.xml.service.CrawlService             : Crawling Phimmoi page: 2
+2018-07-15 10:34:24.207  INFO 11597 --- [Thread-17] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@6fe7aac8: startup date [Sun Jul 15 10:33:23 ICT 2018]; root of context hierarchy
+2018-07-15 10:34:24.210  INFO 11597 --- [Thread-17] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-07-15 10:34:24.211  INFO 11597 --- [Thread-17] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2018-07-15 10:34:24.214  INFO 11597 --- [Thread-17] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-07-15 10:34:24.215  INFO 11597 --- [Thread-17] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2018-07-15 10:34:24.230  INFO 11597 --- [Thread-17] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2018-07-15 10:47:59.164  INFO 11981 --- [main] com.xml.XmlProjectApplication            : Starting XmlProjectApplication on nhat with PID 11981 (/DATA/FPT/XMLProject/XMLProject_Backup/target/classes started by nhat in /DATA/FPT/XMLProject/XMLProject_Backup)
+2018-07-15 10:47:59.169  INFO 11981 --- [main] com.xml.XmlProjectApplication            : No active profile set, falling back to default profiles: default
+2018-07-15 10:47:59.259  INFO 11981 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2f7c2f4f: startup date [Sun Jul 15 10:47:59 ICT 2018]; root of context hierarchy
+2018-07-15 10:48:00.950  INFO 11981 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$9fcdb7ed] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-07-15 10:48:01.287  INFO 11981 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-07-15 10:48:01.318  INFO 11981 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-07-15 10:48:01.319  INFO 11981 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-07-15 10:48:01.323  INFO 11981 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2018-07-15 10:48:01.576  INFO 11981 --- [localhost-startStop-1] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2018-07-15 10:48:01.581  INFO 11981 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-07-15 10:48:01.994  INFO 11981 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-07-15 10:48:02.002  INFO 11981 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-07-15 10:48:02.003  INFO 11981 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-07-15 10:48:02.003  INFO 11981 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-07-15 10:48:02.003  INFO 11981 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-07-15 10:48:02.242  INFO 11981 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-07-15 10:48:02.877  INFO 11981 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-07-15 10:48:02.948  INFO 11981 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-07-15 10:48:03.885  INFO 11981 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-07-15 10:48:04.772  WARN 11981 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-07-15 10:48:05.171  INFO 11981 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-07-15 10:48:05.173  INFO 11981 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-07-15 10:48:05.183  INFO 11981 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-07-15 10:48:05.231  INFO 11981 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-07-15 10:48:05.237  INFO 11981 --- [main] com.xml.XmlProjectApplication            : Started XmlProjectApplication in 6.916 seconds (JVM running for 7.864)
+2018-07-15 10:48:10.993  INFO 11981 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-07-15 10:48:32.399  INFO 11981 --- [Thread-18] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2f7c2f4f: startup date [Sun Jul 15 10:47:59 ICT 2018]; root of context hierarchy
+2018-07-15 10:48:32.402  INFO 11981 --- [Thread-18] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-07-15 10:48:32.403  INFO 11981 --- [Thread-18] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2018-07-15 10:48:32.406  INFO 11981 --- [Thread-18] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-07-15 10:48:32.408  INFO 11981 --- [Thread-18] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2018-07-15 10:48:32.422  INFO 11981 --- [Thread-18] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2018-07-15 10:48:34.600  INFO 11981 --- [http-nio-8080-exec-1] com.xml.service.CrawlService             : Crawling Phimmoi page: 1
+2018-07-15 10:48:37.881  INFO 12136 --- [main] com.xml.XmlProjectApplication            : Starting XmlProjectApplication on nhat with PID 12136 (/DATA/FPT/XMLProject/XMLProject_Backup/target/classes started by nhat in /DATA/FPT/XMLProject/XMLProject_Backup)
+2018-07-15 10:48:37.889  INFO 12136 --- [main] com.xml.XmlProjectApplication            : No active profile set, falling back to default profiles: default
+2018-07-15 10:48:38.038  INFO 12136 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4386f16: startup date [Sun Jul 15 10:48:38 ICT 2018]; root of context hierarchy
+2018-07-15 10:48:39.561  INFO 12136 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$558fdcbf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-07-15 10:48:39.870  INFO 12136 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-07-15 10:48:39.897  INFO 12136 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-07-15 10:48:39.897  INFO 12136 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-07-15 10:48:39.902  INFO 12136 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2018-07-15 10:48:40.161  INFO 12136 --- [localhost-startStop-1] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2018-07-15 10:48:40.165  INFO 12136 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-07-15 10:48:40.507  INFO 12136 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-07-15 10:48:40.512  INFO 12136 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-07-15 10:48:40.513  INFO 12136 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-07-15 10:48:40.513  INFO 12136 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-07-15 10:48:40.513  INFO 12136 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-07-15 10:48:40.714  INFO 12136 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-07-15 10:48:41.366  INFO 12136 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-07-15 10:48:41.434  INFO 12136 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-07-15 10:48:42.352  INFO 12136 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-07-15 10:48:43.441  WARN 12136 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-07-15 10:48:43.909  INFO 12136 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-07-15 10:48:43.911  INFO 12136 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-07-15 10:48:43.918  INFO 12136 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-07-15 10:48:43.960  INFO 12136 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-07-15 10:48:43.964  INFO 12136 --- [main] com.xml.XmlProjectApplication            : Started XmlProjectApplication in 7.004 seconds (JVM running for 7.933)
+2018-07-15 10:48:50.449  INFO 12136 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-07-15 10:49:16.263  INFO 12136 --- [Thread-17] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4386f16: startup date [Sun Jul 15 10:48:38 ICT 2018]; root of context hierarchy
+2018-07-15 10:49:16.268  INFO 12136 --- [Thread-17] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-07-15 10:49:16.269  INFO 12136 --- [Thread-17] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2018-07-15 10:49:16.273  INFO 12136 --- [Thread-17] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-07-15 10:49:16.279  INFO 12136 --- [Thread-17] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2018-07-15 10:49:16.296  INFO 12136 --- [Thread-17] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2018-07-15 10:49:18.470  INFO 12136 --- [http-nio-8080-exec-4] com.xml.service.CrawlService             : Crawling Phimmoi page: 1
+2018-07-15 10:52:50.693  INFO 12398 --- [main] com.xml.XmlProjectApplication            : Starting XmlProjectApplication on nhat with PID 12398 (/DATA/FPT/XMLProject/XMLProject_Backup/target/classes started by nhat in /DATA/FPT/XMLProject/XMLProject_Backup)
+2018-07-15 10:52:50.702  INFO 12398 --- [main] com.xml.XmlProjectApplication            : No active profile set, falling back to default profiles: default
+2018-07-15 10:52:50.844  INFO 12398 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@34b7ac2f: startup date [Sun Jul 15 10:52:50 ICT 2018]; root of context hierarchy
+2018-07-15 10:52:52.506  INFO 12398 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$6cc2be31] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-07-15 10:52:52.848  INFO 12398 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-07-15 10:52:52.878  INFO 12398 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-07-15 10:52:52.879  INFO 12398 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-07-15 10:52:52.884  INFO 12398 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2018-07-15 10:52:53.151  INFO 12398 --- [localhost-startStop-1] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2018-07-15 10:52:53.158  INFO 12398 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-07-15 10:52:53.506  INFO 12398 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-07-15 10:52:53.511  INFO 12398 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-07-15 10:52:53.512  INFO 12398 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-07-15 10:52:53.512  INFO 12398 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-07-15 10:52:53.513  INFO 12398 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-07-15 10:52:53.703  INFO 12398 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-07-15 10:52:54.383  INFO 12398 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-07-15 10:52:54.459  INFO 12398 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-07-15 10:52:55.434  INFO 12398 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-07-15 10:52:56.365  WARN 12398 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-07-15 10:52:56.815  INFO 12398 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-07-15 10:52:56.817  INFO 12398 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-07-15 10:52:56.826  INFO 12398 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-07-15 10:52:56.871  INFO 12398 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-07-15 10:52:56.877  INFO 12398 --- [main] com.xml.XmlProjectApplication            : Started XmlProjectApplication in 7.173 seconds (JVM running for 8.052)
+2018-07-15 10:53:06.198  INFO 12398 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-07-15 10:56:19.804  INFO 12398 --- [http-nio-8080-exec-8] com.xml.service.CrawlService             : Crawling Phimmoi page: 1
+2018-07-15 10:56:42.531  INFO 12398 --- [Thread-17] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@34b7ac2f: startup date [Sun Jul 15 10:52:50 ICT 2018]; root of context hierarchy
+2018-07-15 10:56:42.534  INFO 12398 --- [Thread-17] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-07-15 10:56:42.535  INFO 12398 --- [Thread-17] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2018-07-15 10:56:42.537  INFO 12398 --- [Thread-17] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-07-15 10:56:42.539  INFO 12398 --- [Thread-17] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2018-07-15 10:56:42.551  INFO 12398 --- [Thread-17] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2018-07-15 11:01:50.979  INFO 12665 --- [main] com.xml.XmlProjectApplication            : Starting XmlProjectApplication on nhat with PID 12665 (/DATA/FPT/XMLProject/XMLProject_Backup/target/classes started by nhat in /DATA/FPT/XMLProject/XMLProject_Backup)
+2018-07-15 11:01:50.984  INFO 12665 --- [main] com.xml.XmlProjectApplication            : No active profile set, falling back to default profiles: default
+2018-07-15 11:01:51.134  INFO 12665 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@769f71a9: startup date [Sun Jul 15 11:01:51 ICT 2018]; root of context hierarchy
+2018-07-15 11:01:52.917  INFO 12665 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$4ca46ff9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-07-15 11:01:53.240  INFO 12665 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-07-15 11:01:53.270  INFO 12665 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-07-15 11:01:53.270  INFO 12665 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-07-15 11:01:53.275  INFO 12665 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2018-07-15 11:01:53.541  INFO 12665 --- [localhost-startStop-1] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2018-07-15 11:01:53.546  INFO 12665 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-07-15 11:01:53.856  INFO 12665 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-07-15 11:01:53.861  INFO 12665 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-07-15 11:01:53.862  INFO 12665 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-07-15 11:01:53.862  INFO 12665 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-07-15 11:01:53.862  INFO 12665 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-07-15 11:01:54.019  INFO 12665 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-07-15 11:01:54.664  INFO 12665 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-07-15 11:01:54.725  INFO 12665 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-07-15 11:01:55.654  INFO 12665 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-07-15 11:01:56.547  WARN 12665 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-07-15 11:01:56.971  INFO 12665 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-07-15 11:01:56.973  INFO 12665 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-07-15 11:01:56.986  INFO 12665 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-07-15 11:01:57.055  INFO 12665 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-07-15 11:01:57.059  INFO 12665 --- [main] com.xml.XmlProjectApplication            : Started XmlProjectApplication in 6.835 seconds (JVM running for 7.787)
+2018-07-15 11:02:02.069  INFO 12665 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-07-15 11:02:11.112  INFO 12665 --- [http-nio-8080-exec-9] com.xml.service.CrawlService             : Crawling Phimmoi page: 1
+2018-07-15 11:03:07.970 ERROR 12665 --- [http-nio-8080-exec-9] com.xml.service.CrawlService             : Failed to validate Thế Giới Kủng Long: Vương Quốc Sụp Đổ because of quality: Bản Cam
+2018-07-15 11:03:07.971  INFO 12665 --- [http-nio-8080-exec-9] com.xml.service.CrawlService             : SAVE TO DB SUCCESSFUL
+2018-07-15 11:12:11.850  INFO 4568 --- [main] com.xml.XmlProjectApplication            : Starting XmlProjectApplication on nhat with PID 4568 (/DATA/FPT/XMLProject/XMLProject_Backup/target/classes started by nhat in /DATA/FPT/XMLProject/XMLProject_Backup)
+2018-07-15 11:12:11.901  INFO 4568 --- [main] com.xml.XmlProjectApplication            : No active profile set, falling back to default profiles: default
+2018-07-15 11:12:12.054  INFO 4568 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@bef2d72: startup date [Sun Jul 15 11:12:12 ICT 2018]; root of context hierarchy
+2018-07-15 11:12:15.274  INFO 4568 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d43cff29] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-07-15 11:12:15.791  INFO 4568 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-07-15 11:12:15.835  INFO 4568 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-07-15 11:12:15.836  INFO 4568 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-07-15 11:12:15.841  INFO 4568 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2018-07-15 11:12:16.196  INFO 4568 --- [localhost-startStop-1] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2018-07-15 11:12:16.202  INFO 4568 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-07-15 11:12:16.537  INFO 4568 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-07-15 11:12:16.541  INFO 4568 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-07-15 11:12:16.543  INFO 4568 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-07-15 11:12:16.544  INFO 4568 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-07-15 11:12:16.544  INFO 4568 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-07-15 11:12:16.910  INFO 4568 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-07-15 11:12:17.978  INFO 4568 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-07-15 11:12:18.123  INFO 4568 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-07-15 11:12:19.658  INFO 4568 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-07-15 11:12:20.711  WARN 4568 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-07-15 11:12:21.172  INFO 4568 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-07-15 11:12:21.174  INFO 4568 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-07-15 11:12:21.181  INFO 4568 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-07-15 11:12:21.276  INFO 4568 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-07-15 11:12:21.285  INFO 4568 --- [main] com.xml.XmlProjectApplication            : Started XmlProjectApplication in 10.423 seconds (JVM running for 13.003)
+2018-07-15 11:16:17.810  INFO 4568 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-07-15 11:24:07.045  INFO 4568 --- [Thread-25] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@bef2d72: startup date [Sun Jul 15 11:12:12 ICT 2018]; root of context hierarchy
+2018-07-15 11:24:07.048  INFO 4568 --- [Thread-25] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-07-15 11:24:07.049  INFO 4568 --- [Thread-25] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2018-07-15 11:24:07.052  INFO 4568 --- [Thread-25] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-07-15 11:24:07.054  INFO 4568 --- [Thread-25] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2018-07-15 11:24:07.073  INFO 4568 --- [Thread-25] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2018-07-15 11:24:11.800  INFO 4986 --- [main] com.xml.XmlProjectApplication            : Starting XmlProjectApplication on nhat with PID 4986 (/DATA/FPT/XMLProject/XMLProject_Backup/target/classes started by nhat in /DATA/FPT/XMLProject/XMLProject_Backup)
+2018-07-15 11:24:11.807  INFO 4986 --- [main] com.xml.XmlProjectApplication            : No active profile set, falling back to default profiles: default
+2018-07-15 11:24:11.993  INFO 4986 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@76908cc0: startup date [Sun Jul 15 11:24:11 ICT 2018]; root of context hierarchy
+2018-07-15 11:24:13.617  INFO 4986 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$3cea50a2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-07-15 11:24:13.943  INFO 4986 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-07-15 11:24:13.970  INFO 4986 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-07-15 11:24:13.971  INFO 4986 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-07-15 11:24:13.976  INFO 4986 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2018-07-15 11:24:14.254  INFO 4986 --- [localhost-startStop-1] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2018-07-15 11:24:14.259  INFO 4986 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-07-15 11:24:14.582  INFO 4986 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-07-15 11:24:14.587  INFO 4986 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-07-15 11:24:14.588  INFO 4986 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-07-15 11:24:14.588  INFO 4986 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-07-15 11:24:14.588  INFO 4986 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-07-15 11:24:14.745  INFO 4986 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-07-15 11:24:15.412  INFO 4986 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-07-15 11:24:15.474  INFO 4986 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-07-15 11:24:16.405  INFO 4986 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-07-15 11:24:17.313  WARN 4986 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-07-15 11:24:17.705  INFO 4986 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-07-15 11:24:17.707  INFO 4986 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-07-15 11:24:17.715  INFO 4986 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-07-15 11:24:17.761  INFO 4986 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-07-15 11:24:17.768  INFO 4986 --- [main] com.xml.XmlProjectApplication            : Started XmlProjectApplication in 6.839 seconds (JVM running for 8.529)
+2018-07-15 11:24:29.599  INFO 4986 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-07-15 11:25:26.873  INFO 4986 --- [Thread-17] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@76908cc0: startup date [Sun Jul 15 11:24:11 ICT 2018]; root of context hierarchy
+2018-07-15 11:25:26.876  INFO 4986 --- [Thread-17] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-07-15 11:25:26.878  INFO 4986 --- [Thread-17] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2018-07-15 11:25:26.881  INFO 4986 --- [Thread-17] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-07-15 11:25:26.883  INFO 4986 --- [Thread-17] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2018-07-15 11:25:26.894  INFO 4986 --- [Thread-17] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2018-07-15 11:25:31.121  INFO 5141 --- [main] com.xml.XmlProjectApplication            : Starting XmlProjectApplication on nhat with PID 5141 (/DATA/FPT/XMLProject/XMLProject_Backup/target/classes started by nhat in /DATA/FPT/XMLProject/XMLProject_Backup)
+2018-07-15 11:25:31.131  INFO 5141 --- [main] com.xml.XmlProjectApplication            : No active profile set, falling back to default profiles: default
+2018-07-15 11:25:31.293  INFO 5141 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@353d0772: startup date [Sun Jul 15 11:25:31 ICT 2018]; root of context hierarchy
+2018-07-15 11:25:32.936  INFO 5141 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c1a84045] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-07-15 11:25:33.248  INFO 5141 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-07-15 11:25:33.277  INFO 5141 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-07-15 11:25:33.278  INFO 5141 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-07-15 11:25:33.283  INFO 5141 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2018-07-15 11:25:33.544  INFO 5141 --- [localhost-startStop-1] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2018-07-15 11:25:33.548  INFO 5141 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-07-15 11:25:33.855  INFO 5141 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-07-15 11:25:33.861  INFO 5141 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-07-15 11:25:33.861  INFO 5141 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-07-15 11:25:33.862  INFO 5141 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-07-15 11:25:33.862  INFO 5141 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-07-15 11:25:34.020  INFO 5141 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-07-15 11:25:34.688  INFO 5141 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-07-15 11:25:34.754  INFO 5141 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-07-15 11:25:35.767  INFO 5141 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-07-15 11:25:36.816  WARN 5141 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-07-15 11:25:37.519  INFO 5141 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-07-15 11:25:37.522  INFO 5141 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-07-15 11:25:37.534  INFO 5141 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-07-15 11:25:37.589  INFO 5141 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-07-15 11:25:37.594  INFO 5141 --- [main] com.xml.XmlProjectApplication            : Started XmlProjectApplication in 7.384 seconds (JVM running for 9.353)
+2018-07-15 11:25:42.438  INFO 5141 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-07-15 11:26:54.747  INFO 5141 --- [Thread-18] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@353d0772: startup date [Sun Jul 15 11:25:31 ICT 2018]; root of context hierarchy
+2018-07-15 11:26:54.751  INFO 5141 --- [Thread-18] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-07-15 11:26:54.752  INFO 5141 --- [Thread-18] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2018-07-15 11:26:54.756  INFO 5141 --- [Thread-18] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-07-15 11:26:54.763  INFO 5141 --- [Thread-18] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2018-07-15 11:26:54.803  INFO 5141 --- [Thread-18] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2018-07-15 11:26:58.753  INFO 5297 --- [main] com.xml.XmlProjectApplication            : Starting XmlProjectApplication on nhat with PID 5297 (/DATA/FPT/XMLProject/XMLProject_Backup/target/classes started by nhat in /DATA/FPT/XMLProject/XMLProject_Backup)
+2018-07-15 11:26:58.761  INFO 5297 --- [main] com.xml.XmlProjectApplication            : No active profile set, falling back to default profiles: default
+2018-07-15 11:26:58.877  INFO 5297 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1c93084c: startup date [Sun Jul 15 11:26:58 ICT 2018]; root of context hierarchy
+2018-07-15 11:27:00.883  INFO 5297 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$558fdcbf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-07-15 11:27:01.217  INFO 5297 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-07-15 11:27:01.247  INFO 5297 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-07-15 11:27:01.248  INFO 5297 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-07-15 11:27:01.253  INFO 5297 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2018-07-15 11:27:01.525  INFO 5297 --- [localhost-startStop-1] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2018-07-15 11:27:01.531  INFO 5297 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-07-15 11:27:01.872  INFO 5297 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-07-15 11:27:01.878  INFO 5297 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-07-15 11:27:01.878  INFO 5297 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-07-15 11:27:01.879  INFO 5297 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-07-15 11:27:01.879  INFO 5297 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-07-15 11:27:02.072  INFO 5297 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-07-15 11:27:02.770  INFO 5297 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-07-15 11:27:02.838  INFO 5297 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-07-15 11:27:03.783  INFO 5297 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-07-15 11:27:04.761  WARN 5297 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-07-15 11:27:05.260  INFO 5297 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-07-15 11:27:05.262  INFO 5297 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-07-15 11:27:05.272  INFO 5297 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-07-15 11:27:05.322  INFO 5297 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-07-15 11:27:05.328  INFO 5297 --- [main] com.xml.XmlProjectApplication            : Started XmlProjectApplication in 7.568 seconds (JVM running for 9.443)
+2018-07-15 11:27:05.471  INFO 5297 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-07-15 11:28:07.067  INFO 5297 --- [Thread-19] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1c93084c: startup date [Sun Jul 15 11:26:58 ICT 2018]; root of context hierarchy
+2018-07-15 11:28:07.071  INFO 5297 --- [Thread-19] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-07-15 11:28:07.072  INFO 5297 --- [Thread-19] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2018-07-15 11:28:07.074  INFO 5297 --- [Thread-19] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-07-15 11:28:07.075  INFO 5297 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2018-07-15 11:28:07.093  INFO 5297 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2018-07-15 11:28:11.449  INFO 5455 --- [main] com.xml.XmlProjectApplication            : Starting XmlProjectApplication on nhat with PID 5455 (/DATA/FPT/XMLProject/XMLProject_Backup/target/classes started by nhat in /DATA/FPT/XMLProject/XMLProject_Backup)
+2018-07-15 11:28:11.454  INFO 5455 --- [main] com.xml.XmlProjectApplication            : No active profile set, falling back to default profiles: default
+2018-07-15 11:28:11.597  INFO 5455 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@22a637e7: startup date [Sun Jul 15 11:28:11 ICT 2018]; root of context hierarchy
+2018-07-15 11:28:13.160  INFO 5455 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$724e61d7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-07-15 11:28:13.475  INFO 5455 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-07-15 11:28:13.505  INFO 5455 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-07-15 11:28:13.505  INFO 5455 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-07-15 11:28:13.511  INFO 5455 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2018-07-15 11:28:13.793  INFO 5455 --- [localhost-startStop-1] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2018-07-15 11:28:13.797  INFO 5455 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-07-15 11:28:14.109  INFO 5455 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-07-15 11:28:14.114  INFO 5455 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-07-15 11:28:14.115  INFO 5455 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-07-15 11:28:14.115  INFO 5455 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-07-15 11:28:14.115  INFO 5455 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-07-15 11:28:14.274  INFO 5455 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-07-15 11:28:14.899  INFO 5455 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-07-15 11:28:14.976  INFO 5455 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-07-15 11:28:15.957  INFO 5455 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-07-15 11:28:16.864  WARN 5455 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-07-15 11:28:17.323  INFO 5455 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-07-15 11:28:17.325  INFO 5455 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-07-15 11:28:17.333  INFO 5455 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-07-15 11:28:17.381  INFO 5455 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-07-15 11:28:17.387  INFO 5455 --- [main] com.xml.XmlProjectApplication            : Started XmlProjectApplication in 7.056 seconds (JVM running for 9.082)
+2018-07-15 11:28:19.796  INFO 5455 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-07-15 11:28:47.847  INFO 5455 --- [Thread-18] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@22a637e7: startup date [Sun Jul 15 11:28:11 ICT 2018]; root of context hierarchy
+2018-07-15 11:28:47.851  INFO 5455 --- [Thread-18] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-07-15 11:28:47.853  INFO 5455 --- [Thread-18] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2018-07-15 11:28:47.855  INFO 5455 --- [Thread-18] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-07-15 11:28:47.856  INFO 5455 --- [Thread-18] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2018-07-15 11:28:47.880  INFO 5455 --- [Thread-18] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2018-07-15 11:28:51.921  INFO 5597 --- [main] com.xml.XmlProjectApplication            : Starting XmlProjectApplication on nhat with PID 5597 (/DATA/FPT/XMLProject/XMLProject_Backup/target/classes started by nhat in /DATA/FPT/XMLProject/XMLProject_Backup)
+2018-07-15 11:28:51.926  INFO 5597 --- [main] com.xml.XmlProjectApplication            : No active profile set, falling back to default profiles: default
+2018-07-15 11:28:52.105  INFO 5597 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@cd3fee8: startup date [Sun Jul 15 11:28:52 ICT 2018]; root of context hierarchy
+2018-07-15 11:28:53.803  INFO 5597 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ef3ba5b4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-07-15 11:28:54.122  INFO 5597 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-07-15 11:28:54.153  INFO 5597 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-07-15 11:28:54.153  INFO 5597 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-07-15 11:28:54.160  INFO 5597 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2018-07-15 11:28:54.438  INFO 5597 --- [localhost-startStop-1] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2018-07-15 11:28:54.442  INFO 5597 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-07-15 11:28:54.757  INFO 5597 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-07-15 11:28:54.762  INFO 5597 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-07-15 11:28:54.763  INFO 5597 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-07-15 11:28:54.763  INFO 5597 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-07-15 11:28:54.763  INFO 5597 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-07-15 11:28:54.923  INFO 5597 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-07-15 11:28:55.578  INFO 5597 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-07-15 11:28:55.649  INFO 5597 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-07-15 11:28:56.583  INFO 5597 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-07-15 11:28:57.477  WARN 5597 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-07-15 11:28:57.866  INFO 5597 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-07-15 11:28:57.869  INFO 5597 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-07-15 11:28:57.878  INFO 5597 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-07-15 11:28:57.941  INFO 5597 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-07-15 11:28:57.946  INFO 5597 --- [main] com.xml.XmlProjectApplication            : Started XmlProjectApplication in 7.141 seconds (JVM running for 8.979)
+2018-07-15 11:29:00.413  INFO 5597 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-07-15 11:29:15.553  INFO 5597 --- [Thread-18] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@cd3fee8: startup date [Sun Jul 15 11:28:52 ICT 2018]; root of context hierarchy
+2018-07-15 11:29:15.556  INFO 5597 --- [Thread-18] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-07-15 11:29:15.559  INFO 5597 --- [Thread-18] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2018-07-15 11:29:15.562  INFO 5597 --- [Thread-18] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-07-15 11:29:15.563  INFO 5597 --- [Thread-18] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2018-07-15 11:29:15.576  INFO 5597 --- [Thread-18] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2018-07-15 11:29:19.133  INFO 5734 --- [main] com.xml.XmlProjectApplication            : Starting XmlProjectApplication on nhat with PID 5734 (/DATA/FPT/XMLProject/XMLProject_Backup/target/classes started by nhat in /DATA/FPT/XMLProject/XMLProject_Backup)
+2018-07-15 11:29:19.181  INFO 5734 --- [main] com.xml.XmlProjectApplication            : No active profile set, falling back to default profiles: default
+2018-07-15 11:29:19.335  INFO 5734 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5be6e01c: startup date [Sun Jul 15 11:29:19 ICT 2018]; root of context hierarchy
+2018-07-15 11:29:21.229  INFO 5734 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d7e165af] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-07-15 11:29:21.533  INFO 5734 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-07-15 11:29:21.567  INFO 5734 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-07-15 11:29:21.567  INFO 5734 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-07-15 11:29:21.574  INFO 5734 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2018-07-15 11:29:21.837  INFO 5734 --- [localhost-startStop-1] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2018-07-15 11:29:21.842  INFO 5734 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-07-15 11:29:22.169  INFO 5734 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-07-15 11:29:22.175  INFO 5734 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-07-15 11:29:22.175  INFO 5734 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-07-15 11:29:22.175  INFO 5734 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-07-15 11:29:22.176  INFO 5734 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-07-15 11:29:22.331  INFO 5734 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-07-15 11:29:22.995  INFO 5734 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-07-15 11:29:23.064  INFO 5734 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-07-15 11:29:23.983  INFO 5734 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-07-15 11:29:24.945  WARN 5734 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-07-15 11:29:25.370  INFO 5734 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-07-15 11:29:25.372  INFO 5734 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-07-15 11:29:25.382  INFO 5734 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-07-15 11:29:25.428  INFO 5734 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-07-15 11:29:25.433  INFO 5734 --- [main] com.xml.XmlProjectApplication            : Started XmlProjectApplication in 7.274 seconds (JVM running for 8.957)
+2018-07-15 11:29:28.170  INFO 5734 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-07-15 11:30:56.363  INFO 5734 --- [Thread-18] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5be6e01c: startup date [Sun Jul 15 11:29:19 ICT 2018]; root of context hierarchy
+2018-07-15 11:30:56.366  INFO 5734 --- [Thread-18] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-07-15 11:30:56.368  INFO 5734 --- [Thread-18] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2018-07-15 11:30:56.371  INFO 5734 --- [Thread-18] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-07-15 11:30:56.373  INFO 5734 --- [Thread-18] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2018-07-15 11:30:56.392  INFO 5734 --- [Thread-18] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2018-07-15 11:31:00.080  INFO 5887 --- [main] com.xml.XmlProjectApplication            : Starting XmlProjectApplication on nhat with PID 5887 (/DATA/FPT/XMLProject/XMLProject_Backup/target/classes started by nhat in /DATA/FPT/XMLProject/XMLProject_Backup)
+2018-07-15 11:31:00.086  INFO 5887 --- [main] com.xml.XmlProjectApplication            : No active profile set, falling back to default profiles: default
+2018-07-15 11:31:00.239  INFO 5887 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3ba9ad43: startup date [Sun Jul 15 11:31:00 ICT 2018]; root of context hierarchy
+2018-07-15 11:31:01.922  INFO 5887 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$39a6681b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-07-15 11:31:02.259  INFO 5887 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-07-15 11:31:02.293  INFO 5887 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-07-15 11:31:02.294  INFO 5887 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-07-15 11:31:02.299  INFO 5887 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2018-07-15 11:31:02.592  INFO 5887 --- [localhost-startStop-1] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2018-07-15 11:31:02.597  INFO 5887 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-07-15 11:31:02.967  INFO 5887 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-07-15 11:31:02.974  INFO 5887 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-07-15 11:31:02.974  INFO 5887 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-07-15 11:31:02.975  INFO 5887 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-07-15 11:31:02.975  INFO 5887 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-07-15 11:31:03.144  INFO 5887 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-07-15 11:31:03.796  INFO 5887 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-07-15 11:31:03.876  INFO 5887 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-07-15 11:31:04.951  INFO 5887 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-07-15 11:31:06.036  WARN 5887 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-07-15 11:31:06.724  INFO 5887 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-07-15 11:31:06.726  INFO 5887 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-07-15 11:31:06.733  INFO 5887 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-07-15 11:31:06.774  INFO 5887 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-07-15 11:31:06.779  INFO 5887 --- [main] com.xml.XmlProjectApplication            : Started XmlProjectApplication in 7.543 seconds (JVM running for 9.134)
+2018-07-15 11:31:08.903  INFO 5887 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-07-15 11:31:40.638  INFO 5887 --- [Thread-19] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3ba9ad43: startup date [Sun Jul 15 11:31:00 ICT 2018]; root of context hierarchy
+2018-07-15 11:31:40.642  INFO 5887 --- [Thread-19] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-07-15 11:31:40.644  INFO 5887 --- [Thread-19] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2018-07-15 11:31:40.651  INFO 5887 --- [Thread-19] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-07-15 11:31:40.653  INFO 5887 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2018-07-15 11:31:40.663  INFO 5887 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2018-07-15 11:31:44.385  INFO 6037 --- [main] com.xml.XmlProjectApplication            : Starting XmlProjectApplication on nhat with PID 6037 (/DATA/FPT/XMLProject/XMLProject_Backup/target/classes started by nhat in /DATA/FPT/XMLProject/XMLProject_Backup)
+2018-07-15 11:31:44.391  INFO 6037 --- [main] com.xml.XmlProjectApplication            : No active profile set, falling back to default profiles: default
+2018-07-15 11:31:44.524  INFO 6037 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7ce3cb8e: startup date [Sun Jul 15 11:31:44 ICT 2018]; root of context hierarchy
+2018-07-15 11:31:46.428  INFO 6037 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$447cfd90] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-07-15 11:31:46.768  INFO 6037 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-07-15 11:31:46.798  INFO 6037 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-07-15 11:31:46.798  INFO 6037 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-07-15 11:31:46.803  INFO 6037 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2018-07-15 11:31:47.078  INFO 6037 --- [localhost-startStop-1] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2018-07-15 11:31:47.083  INFO 6037 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-07-15 11:31:47.429  INFO 6037 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-07-15 11:31:47.435  INFO 6037 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-07-15 11:31:47.435  INFO 6037 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-07-15 11:31:47.435  INFO 6037 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-07-15 11:31:47.436  INFO 6037 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-07-15 11:31:47.598  INFO 6037 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-07-15 11:31:48.248  INFO 6037 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-07-15 11:31:48.311  INFO 6037 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-07-15 11:31:49.274  INFO 6037 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-07-15 11:31:50.357  WARN 6037 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-07-15 11:31:50.801  INFO 6037 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-07-15 11:31:50.803  INFO 6037 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-07-15 11:31:50.809  INFO 6037 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-07-15 11:31:50.850  INFO 6037 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-07-15 11:31:50.854  INFO 6037 --- [main] com.xml.XmlProjectApplication            : Started XmlProjectApplication in 7.544 seconds (JVM running for 9.132)
+2018-07-15 11:31:51.482  INFO 6037 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'

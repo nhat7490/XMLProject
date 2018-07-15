@@ -10,6 +10,7 @@
     <title>Thông tin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/detail.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/w3.css"/>
     <link href="https://unpkg.com/ionicons@4.2.4/dist/css/ionicons.min.css" rel="stylesheet">
 </head>
 
@@ -29,6 +30,12 @@
                 </div>
             </c:if>
             <c:if test="${not empty user}">
+                <div class="header-item">
+                    <a href="/trang-chu">
+                        <i class="icon ion-ios-home"></i>
+                        <span>Trang chủ</span>
+                    </a>
+                </div>
                 <div class="header-item">
                     <a href="/log-out">
                         <i class="icon ion-ios-log-out"></i>
