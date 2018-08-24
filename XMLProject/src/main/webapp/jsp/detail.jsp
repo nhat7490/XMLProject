@@ -285,13 +285,15 @@
                         </h5>
                         <h5 id="movieYear" class="price"> Năm:
                         </h5>
-                        <h5 id="vkoolRate" class="price"> Điểm Vkool:
+                        <h5 id="vkoolRate" class="price"> Điểm PhimBatHu:
                         </h5>
-                        <h5 id="phimmoiRate" class="price"> Điểm Phimmoi:
+                        <h5 id="phimmoiRate" class="price"> Điểm Bilu:
+                        </h5>
+                        <h5 id="categories" class="price"> Thể Loại:
                         </h5>
                         <div id="divLink" class="action text-center">
-                            <a id="phimmoiLink" class="btn btn-info" role="button"><h5>Phimmoi</h5></a>
-                            <a id="vkoolLink" class="btn btn-info" role="button"><h5>Vkool</h5></a>
+                            <a id="phimmoiLink" class="btn btn-info" role="button"><h5>Bilu</h5></a>
+                            <a id="vkoolLink" class="btn btn-info" role="button"><h5>PhimBatHu</h5></a>
                         </div>
 
                     </div>
@@ -320,27 +322,19 @@
     function loadXmlDoc(id) {
         var url = 'http://localhost:8080/movie-detail/' + id;
         var xhttp = new XMLHttpRequest();
-
         xhttp.onreadystatechange = function () {
             if (xhttp.readyState === 4 && xhttp.status === 200) {
                 console.log(xhttp.responseText);
+                console.log(categories);
 
                 // Clean xmlString
                 var xmlString = xhttp.responseText;
-                // xmlString = xmlString.replace(new RegExp(' xmlns(:.*?)?=(".*?")'), '');
-                // console.log(xmlString);
 
                 // Create parser
                 var parser = new DOMParser();
                 // Create xmlDoc
                 var xmlDoc = parser.parseFromString(xmlString, "application/xml");
                 console.log(xmlDoc);
-
-                // Get model NodeSet
-                // var movies = xmlDoc.evaluate('//movie', xmlDoc, null, XPathResult.ANY_TYPE, null);
-
-                //Get single movie
-                // var movie = movies.iterateNext();
 
                 //get poster
                 var imgTag = document.getElementById("movieImage");
@@ -350,7 +344,7 @@
 
                 //get Title
                 var titleTag = document.getElementById("movieTitle");
-                var title = xmlDoc.getElementsByTagName("title")[0].textContent;
+                var title = xmlDoc.getElementsByTagName("title")[0].textContent.split("-")[0];
                 console.log(title);
                 titleTag.innerHTML = title;
 
@@ -387,7 +381,6 @@
                 //get phimmoi link
                 var phmmoiLinkTag = document.getElementById("phimmoiLink");
                 var phimmoiLink = xmlDoc.getElementsByTagName("bilu_link")[0];
-                console.log(phimmoiLink);
                 if (phimmoiLink) {
                     phmmoiLinkTag.href = phimmoiLink.textContent;
                 } else {
@@ -403,6 +396,11 @@
                     document.getElementById("divLink").removeChild(vkoolLinkTag);
                 }
 
+                //get categories
+                var categoriesTag =document.getElementById("categories");
+                var categories = xmlDoc.getElementsByTagName("title")[0].textContent.split("-")[1];
+                console.log(categories);
+                categoriesTag.append(categories);
             }
         };
 

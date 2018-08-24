@@ -6,7 +6,6 @@
 package com.xml.crawler;
 
 import com.sun.org.apache.xerces.internal.util.URI;
-import com.xml.bilutv.StAXParserBilutv;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -60,9 +59,9 @@ public class Crawler {
             }
             is.close();
         } catch (URI.MalformedURIException ex) {
-            LOGGER.error("CRAWLING ERROR");
+            LOGGER.error("CRAWLING " + uri + " ERROR");
         } catch (IOException ex) {
-            LOGGER.error("CRAWLING ERROR");
+            LOGGER.error("CRAWLING " + uri + " ERROR");
         }
     }
 

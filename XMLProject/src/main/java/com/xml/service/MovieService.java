@@ -52,5 +52,8 @@ public class MovieService {
         return movieRepository.findByTitleLike(pageable, "%" + search + "%");
     }
 
+    public void flush(){
+        this.movieRepository.flush();
+    }
 
 }

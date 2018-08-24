@@ -1,40 +1,38 @@
 package com.xml.service;
 
-import com.xml.bilutv.StAXParserBilutv;
+import com.xml.bilutv.BiluStAXParser;
 import com.xml.crawler.Crawler;
 import com.xml.model.Movie;
 import com.xml.validator.Validate;
-import com.xml.vkool.StAXParserVkool;
+import com.xml.vkool.PhimBatHuStAXParser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-import org.xml.sax.SAXException;
 
-import javax.xml.bind.JAXBException;
 import javax.xml.stream.XMLStreamException;
 import java.io.ByteArrayInputStream;
-import java.io.IOException;
 import java.io.InputStream;
-import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Service
-public class CrawlService{
+public class CrawlService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(CrawlService.class);
     private final MovieService movieService;
+    private final CategoryService categoryService;
+    private final MovieHasCategoryService movieHasCategory;
 
     private final Validate validate;
 
     public static boolean flag = false;
     public static boolean check = false;
 
-    public CrawlService(MovieService movieService, Validate validate) {
+    public CrawlService(MovieService movieService, CategoryService categoryService, MovieHasCategoryService movieHasCategory, Validate validate) {
         this.movieService = movieService;
+        this.categoryService = categoryService;
+        this.movieHasCategory = movieHasCategory;
         this.validate = validate;
     }
 
@@ -42,147 +40,58 @@ public class CrawlService{
 
     public void run() {
         while (flag) {
-            String phimmoiHtml = "http://www.phimmoi.com/phim-le/";
-            String phimmoiBegin = "<ul class=\"list-movie\">";
-            String phimmoiEnd = "</ul>";
+            String phimBatHuHtml = "http://phimbathu.com/";
+            String phimBatHuBegin = "ul class=\"container\"";
+            String phimBatHuEnd = "</div>";
 
-            String vkoolHtml = "http://vkool.net/list/phim-le/";
-            String vkoolBegin = "ul class=\"list-movie\"";
-            String vkoolEnd = "ad_728";
+            String biluHTML = "http://bilutv.com/";
+            String biluBeginSign = "main-menu";
+            String biluEndSign = "</div>";
 
             List<Movie> vkoolList = new ArrayList<>();
+            List<Movie> phimBatHuList = new ArrayList<>();
 
-            List<Movie> phimmoiList = new ArrayList<>();
 
-
-            for (int i = 1; i <= 20 && flag; i++) {
-                LOGGER.info("Crawling Phimmoi page: " + i);
-
-                String url = phimmoiHtml + "page/" + i;
-
-                Crawler.parseHTML(url, phimmoiBegin, phimmoiEnd);
-                String htmlContent = Crawler.htmlContent + "</ul>";
-//                System.out.println("------------PHIM MOI INFO------------");
-                InputStream is = new ByteArrayInputStream(htmlContent.getBytes(StandardCharsets.UTF_8));
-                try {
-                    phimmoiList.addAll(StAXParserBilutv.StAXCursorParserBilutv(is));
-                } catch (XMLStreamException ex) {
-                    LOGGER.error("PHIMMOI WELFORM ERROR, PAGE: " + i);
-                }
-            }
-
-            Set<Movie> list = new HashSet<>();
-
-            for (int i = 1; i <= 20 && flag; i++) {
-                LOGGER.info("Crawling Vkool page: " + i);
-
-                String url = vkoolHtml + "" + i;
-
-                Crawler.parseHTML(url, vkoolBegin, vkoolEnd);
+            for (int i = 1; i <= 5 && flag; i++) {
+                LOGGER.info("Crawling PhimBatHu page: " + i);
+                Crawler.parseHTML(phimBatHuHtml, phimBatHuBegin, phimBatHuEnd);
                 String htmlContent = Crawler.htmlContent;
-                htmlContent = "<div>" + htmlContent;
-
+                PhimBatHuStAXParser phimBatHuStAXParser = new PhimBatHuStAXParser(movieService, categoryService, movieHasCategory, validate);
                 InputStream is = new ByteArrayInputStream(htmlContent.getBytes(StandardCharsets.UTF_8));
                 try {
-                    vkoolList.addAll(StAXParserVkool.StAXCursorParserVkool(is));
+                    String url = phimBatHuStAXParser.subDomainStAXCursorParser(is) + "?page=" + i;
+                    Crawler.parseHTML(url, "adspruce-bannerspot", "</ul>");
+                    String html = Crawler.htmlContent;
+                    html = html.split("<div class=\"adspruce-bannerspot\"></div>")[1] + "</ul>";
+
+                    InputStream ist = new ByteArrayInputStream(html.getBytes(StandardCharsets.UTF_8));
+                    phimBatHuStAXParser.movieStAXCursorParser(ist);
                 } catch (XMLStreamException ex) {
-                    LOGGER.error("VKOOL WELFORM ERROR, PAGE: " + i);
-                }
-
-            }
-
-            List<Movie> movieList = new ArrayList<>();
-            List<Movie> temp = new ArrayList<>();
-            movieList.addAll(phimmoiList);
-
-            //check duplicate
-            for (Movie vkoolMovie : vkoolList) {
-                boolean found = false;
-                for (Movie movie : movieList) {
-                    if (vkoolMovie.getTitle().equals(movie.getTitle())) {
-                        movie.setVkoolRate(vkoolMovie.getVkoolRate());
-                        movie.setVkoolLink(vkoolMovie.getVkoolLink());
-                        if (movie.getBiluRate() == 0
-                                || vkoolMovie.getVkoolRate() == 0) {
-                            movie.setSelfRate(0);
-                        } else {
-                            movie.setSelfRate((movie.getBiluRate() + vkoolMovie.getVkoolRate()) / 2);
-                        }
-                        found = true;
-                        break;
-                    }
-                }
-                if (!found) {
-                    temp.add(vkoolMovie);
+                    LOGGER.error("PHIMBATHU WELLFORM ERROR, PAGE: " + i);
                 }
             }
 
-            movieList.addAll(temp);
-
-            // check if existed in db
-            List<Movie> foundMovie = new ArrayList<>();
-            for (Movie movie : movieList) {
-                Movie singleMovie = movieService.findByTitle(movie.getTitle());
-                if (singleMovie != null) {
-                    singleMovie.setTitle(movie.getTitle());
-                    singleMovie.setActors(movie.getActors());
-                    singleMovie.setDirector(movie.getDirector());
-                    singleMovie.setYearPublic(movie.getYearPublic());
-                    singleMovie.setQuality(movie.getQuality());
-                    singleMovie.setPosterLink(movie.getPosterLink());
-                    singleMovie.setBiluRate(movie.getBiluRate());
-                    singleMovie.setVkoolRate(movie.getVkoolRate());
-                    singleMovie.setBiluLink(movie.getBiluLink());
-                    singleMovie.setVkoolLink(movie.getVkoolLink());
-                    singleMovie.setSelfRate(movie.getSelfRate());
-
-                    movieService.save(singleMovie);
-                    foundMovie.add(movie);
-                }
-            }
-
-            movieList.removeAll(foundMovie);
-
-            Set<Movie> setMovie = new HashSet<>();
-            for (Movie movie : movieList) {
-                setMovie.add(movie);
-            }
-
-//            System.out.println("LIST MOVIE");
-//            for (Movie movieDetail : setMovie) {
-//
-//                System.out.println("Title: " + movieDetail.getTitle());
-//                System.out.println("Director: " + movieDetail.getDirector());
-//                System.out.println("Actor: " + movieDetail.getActors());
-//                System.out.println("Vkool Rate: " + movieDetail.getVkoolRate());
-//                System.out.println("Phimmoi Rate: " + movieDetail.getBiluRate());
-//                System.out.println("Phimmoi Link: " + movieDetail.getBiluLink());
-//                System.out.println("Vkool Link: " + movieDetail.getVkoolLink());
-//                System.out.println("Poster: " + movieDetail.getPosterLink());
-//                System.out.println("Quality: " + movieDetail.getQuality());
-//                System.out.println("Year: " + movieDetail.getYearPublic());
-//                System.out.println("Rate: " + movieDetail.getSelfRate());
-//                System.out.println("-------------------------");
-//            }
-
-            for (Movie movie : setMovie) {
-                movie.setId(BigInteger.valueOf(0));
+            for (int i = 1; i <= 5 && flag; i++) {
+                LOGGER.info("Crawling Bilu page: " + i);
+                Crawler.parseHTML(biluHTML, biluBeginSign, biluEndSign);
+                String htmlContent = Crawler.htmlContent + "</div></div>";
+                BiluStAXParser biluStAXParser = new BiluStAXParser(movieService, categoryService, movieHasCategory, validate);
+                InputStream is = new ByteArrayInputStream(htmlContent.getBytes(StandardCharsets.UTF_8));
                 try {
-                    if (movie.getVkoolLink() == null) {
-                        movie.setVkoolLink("");
-                    }
-                    if (movie.getBiluLink() == null) {
-                        movie.setBiluLink("");
-                    }
-                    validate.validateSchema(movie, SCHEMA);
-                    movie.setId(null);
-                    movieService.save(movie);
-                } catch (SAXException | JAXBException | IOException e) {
-                    LOGGER.error("Failed to validate " + movie.getTitle() + " because of quality: " + movie.getQuality());
-                } catch (Exception e) {
-                    LOGGER.error("Failed to save to db");
+                    String url = biluStAXParser.subDomainStAXCursorParser(is) + "?page=" + i;
+                    Crawler.parseHTML(url, "list-film", "pagination");
+                    String html = Crawler.htmlContent;
+                    html = html.replace("</form>", "").
+                            replace("<div class=\"clear\"></div>", "");
+                    InputStream ist = new ByteArrayInputStream(html.getBytes(StandardCharsets.UTF_8));
+                    biluStAXParser.movieStAXCursorParser(ist);
+                } catch (XMLStreamException ex) {
+                    ex.printStackTrace();
+                    LOGGER.error("BILU WELLFORM ERROR, PAGE: " + i);
                 }
             }
+
+
             LOGGER.info("SAVE TO DB SUCCESSFUL");
             flag = false;
         }

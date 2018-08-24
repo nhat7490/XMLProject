@@ -3,35 +3,62 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sample.parse;
+package com.xml.bilutv;
 
-import sample.crawl.Crawler;
-import sample.crawl.MainCrawl;
+import com.xml.crawler.Crawler;
+import com.xml.model.Category;
+import com.xml.model.Movie;
+import com.xml.model.MovieHasCategory;
+import com.xml.service.CategoryService;
+import com.xml.service.MovieHasCategoryService;
+import com.xml.service.MovieService;
+import com.xml.validator.Validate;
+import com.xml.vkool.PhimBatHuStAXParser;
+import org.slf4j.LoggerFactory;
+import org.xml.sax.SAXException;
 
+import javax.xml.bind.JAXBException;
+import javax.xml.stream.XMLInputFactory;
+import javax.xml.stream.XMLStreamConstants;
+import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.XMLStreamReader;
 import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.io.InputStream;
+import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.xml.stream.XMLInputFactory;
-import javax.xml.stream.XMLStreamConstants;
-import javax.xml.stream.XMLStreamException;
-import javax.xml.stream.XMLStreamReader;
-import javax.xml.transform.stream.StreamSource;
 
 /**
  * @author JunBu
  */
 public class BiluStAXParser {
 
-    public static final List categories = null;
+    private final MovieService movieService;
+    private final CategoryService categoryService;
+    private final MovieHasCategoryService movieHasCategoryService;
 
-    public static void subDomainStAXCursorParser(InputStream is) throws XMLStreamException {
+    private final Validate validate;
+    private static final String SCHEMA = "static/xslt/Movies.xsd";
+    public static List<String> categories = null;
+
+    private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(BiluStAXParser.class);
+
+    public BiluStAXParser(MovieService movieService, CategoryService categoryService, MovieHasCategoryService movieHasCategoryService, Validate validate) {
+        this.movieService = movieService;
+        this.categoryService = categoryService;
+        this.movieHasCategoryService = movieHasCategoryService;
+        this.validate = validate;
+    }
+
+    public static String subDomainStAXCursorParser(InputStream is) throws XMLStreamException {
 
         String begin = "list-film";
         String end = "pagination";
+        String url = "";
 
         XMLInputFactory factory = XMLInputFactory.newInstance();
         factory.setProperty(XMLInputFactory.IS_VALIDATING, false);
@@ -42,37 +69,17 @@ public class BiluStAXParser {
             int cursor = reader.next();
             if (cursor == XMLStreamConstants.START_ELEMENT) {
                 String tagName = reader.getLocalName();
-                if (tagName.equals("a") && getNodeStaXValue(reader, "a", "", "title").contains("phim lẻ")) {
-                    for (int i = 1; i < 3; i++) {
-                        String url = "http://bilutv.com"
-                                + getNodeStaXValue(reader, "a", "", "href") + "?page="
-                                + i;
-//                        System.out.println(url);
-
-                        Crawler.parseHTML(url, begin, end);
-                        String html = Crawler.htmlContent;
-
-                        html = html.replace("</form>", "").
-                                replace("<div class=\"clear\"></div>", "");
-
-                        InputStream ist = new ByteArrayInputStream(html.getBytes(StandardCharsets.UTF_8));
-
-                        try {
-                            movieStAXCursorParser(ist);
-                        } catch (XMLStreamException ex) {
-                            Logger.getLogger(MainCrawl.class.getName()).log(Level.SEVERE, null, ex);
-                        }
-                    }
+                if (tagName.equals("a")
+                        && getNodeStaXValue(reader, "a", "", "title").contains("phim lẻ")) {
+                    url = "http://bilutv.com"
+                            + getNodeStaXValue(reader, "a", "", "href");
                 }
             }
         }
-
+        return url;
     }
 
-    public static void movieStAXCursorParser(InputStream is) throws XMLStreamException {
-
-        String begin = "list-film";
-        String end = "pagination";
+    public void movieStAXCursorParser(InputStream is) throws XMLStreamException {
 
         boolean foundTitle = false;
         boolean foundDirector = false;
@@ -82,32 +89,48 @@ public class BiluStAXParser {
         boolean foundPoster = false;
         boolean foundQuality = false;
         boolean foundYear = false;
+        Movie movie = new Movie();
+        Movie movieInfo = new Movie();
+        List<Movie> movies = new ArrayList<Movie>();
+        String url = "";
 
         XMLInputFactory factory = XMLInputFactory.newInstance();
         factory.setProperty(XMLInputFactory.IS_VALIDATING, false);
 
         XMLStreamReader reader = factory.createXMLStreamReader(is);
-        String uri = "";
 
         while (reader.hasNext()) {
+            String title = "";
+            String image = "";
+            String quality = "";
+            if (!foundActor && !foundDirector && !foundLink && !foundPoster
+                    && !foundQuality && !foundRate && !foundTitle && !foundYear) {
+                movie = new Movie();
+                movieInfo = new Movie();
+            }
             int cursor = reader.next();
             if (cursor == XMLStreamConstants.START_ELEMENT) {
                 String tagName = reader.getLocalName();
 
                 //quality
                 if (tagName.equals("label")) {
-                    String quality = getTextStaXValue(reader, "label");
-                    System.out.println(quality);
+                    quality = getTextStaXValue(reader, "label").trim();
+                    if (quality.contains("+")){
+                        quality=quality.split("\\+")[0].trim();
+                    }else if (quality.contains("-")){
+                        quality=quality.split("-")[0].trim();
+                    }
+                    movie.setQuality(quality);
                     foundQuality = true;
                 }
 
-                //uri
+                //uri,poster
                 if (tagName.equals("a")) {
-                    uri = "http://bilutv.com" + getNodeStaXValue(reader, "a", "", "href");
-                    System.out.println(uri);
+                    url = "http://bilutv.com" + getNodeStaXValue(reader, "a", "", "href").trim();
 
-                    String image = getNodeStaXValue(reader, "img", "", "src");
-                    System.out.println(image);
+                    image = getNodeStaXValue(reader, "img", "", "src").trim();
+                    movie.setPosterLink(image);
+                    movie.setBiluLink(url);
                     foundLink = true;
                     foundPoster = true;
                 }
@@ -115,14 +138,14 @@ public class BiluStAXParser {
                 //title
                 if (tagName.equals("p")
                         && getNodeStaXValue(reader, "p", "", "class").equals("name")) {
-                    String title = getTextStaXValue(reader, "p").split(":")[0];
-                    System.out.println(title);
+                    title = getTextStaXValue(reader, "p").split(":")[0];
+                    movie.setTitle(title);
                     foundTitle = true;
                 }
 
-                //got to info
+                //go to info
                 if (foundQuality && foundLink && foundPoster && foundTitle) {
-                    Crawler.parseHTML(uri, "meta-data", "/<ul>");
+                    Crawler.parseHTML(url, "meta-data", "/<ul>");
                     String htmlInfo = Crawler.htmlContent;
                     htmlInfo = htmlInfo.split("<div class=\"clear\"></div>")[0]
                             .replaceAll("itemscope", "")
@@ -131,9 +154,14 @@ public class BiluStAXParser {
 
 //                    System.out.println(htmlInfo);
                     InputStream ist = new ByteArrayInputStream(htmlInfo.getBytes(StandardCharsets.UTF_8));
+                    categories = new ArrayList<>();
 
                     try {
-                        movieInfoStAXCursorParser(ist);
+                        movieInfo = movieInfoStAXCursorParser(ist);
+                        movie.setDirector(movieInfo.getDirector());
+                        movie.setBiluRate(movieInfo.getBiluRate());
+                        movie.setActors(movieInfo.getActors());
+                        movie.setYearPublic(movieInfo.getYearPublic());
 
                         foundDirector = true;
                         foundRate = true;
@@ -141,7 +169,71 @@ public class BiluStAXParser {
                         foundYear = true;
 
                         if (foundActor && foundDirector && foundLink && foundPoster
-                                && foundRate && foundTitle && foundYear && foundQuality) {
+                                && foundQuality && foundRate && foundTitle && foundYear) {
+
+                            Movie existedMovie = movieService.findByTitle(movie.getTitle());
+                            List<Category> temp = new ArrayList<>();
+                            if (existedMovie == null) {
+                                movie.setId(BigInteger.valueOf(0));
+                                try {
+                                    if (movie.getVkoolLink() == null) {
+                                        movie.setVkoolLink("");
+                                    }
+                                    if (movie.getBiluLink() == null) {
+                                        movie.setBiluLink("");
+                                    }
+                                    validate.validateSchema(movie, SCHEMA);
+                                    movie.setId(null);
+                                    movieService.save(movie);
+                                    for (String cate : categories) {
+                                        cate = cate.replaceAll("  "," ");
+                                        if (categoryService.findCateByNameLike(cate) == null) {
+                                            Category category = new Category();
+                                            category.setName(cate);
+                                            categoryService.save(category);
+                                            int categorId = categoryService.findCateByNameLike(category.getName()).getId();
+                                            MovieHasCategory movieHasCategory = new MovieHasCategory();
+                                            movieHasCategory.setCategoryId(categorId);
+                                            movieHasCategory.setMovieId(movieService.findByTitle(movie.getTitle()).getId().intValue());
+                                            movieHasCategoryService.save(movieHasCategory);
+                                        } else {
+                                            int categoryId = categoryService.findCateByNameLike(cate).getId();
+                                            MovieHasCategory movieHasCategory = new MovieHasCategory();
+                                            movieHasCategory.setMovieId(movieService.findByTitle(movie.getTitle()).getId().intValue());
+                                            movieHasCategory.setCategoryId(categoryId);
+                                            movieHasCategoryService.save(movieHasCategory);
+                                        }
+                                    }
+                                } catch (SAXException | JAXBException | IOException e) {
+                                    LOGGER.error("Failed to validate " + movie.getTitle() + " because of quality: " + movie.getQuality());
+                                } catch (Exception e) {
+                                    LOGGER.error("Failed to save to db");
+                                }
+                            } else {
+//                                existedMovie.setPosterLink(movie.getPosterLink());
+                                existedMovie.setBiluLink(movie.getBiluLink());
+                                existedMovie.setBiluRate(movie.getBiluRate());
+                                existedMovie.setDirector(movie.getDirector());
+                                existedMovie.setActors(movie.getActors());
+                                existedMovie.setYearPublic(movie.getYearPublic());
+                                existedMovie.setSelfRate((existedMovie.getBiluRate() + existedMovie.getVkoolRate()) / 2);
+
+                                movieService.save(existedMovie);
+                                categories = null;
+                            }
+                            foundTitle = false;
+                            foundDirector = false;
+                            foundActor = false;
+                            foundRate = false;
+                            foundLink = false;
+                            foundPoster = false;
+                            foundQuality = false;
+                            foundYear = false;
+                        }
+                    } catch (XMLStreamException ex) {
+                        LOGGER.error("BILU MOVIE " + movie.getTitle() + " DETAIL WELLFORM ERROR");
+                        if (foundActor && foundDirector && foundLink && foundPoster
+                                && foundQuality && foundRate && foundTitle && foundYear) {
 
                             foundTitle = false;
                             foundDirector = false;
@@ -149,13 +241,10 @@ public class BiluStAXParser {
                             foundRate = false;
                             foundLink = false;
                             foundPoster = false;
-                            foundYear = false;
                             foundQuality = false;
+                            foundYear = false;
                         }
-                    } catch (XMLStreamException ex) {
-                        Logger.getLogger(MainCrawl.class.getName()).log(Level.SEVERE, null, ex);
                     }
-
                 }
 
             }
@@ -164,11 +253,13 @@ public class BiluStAXParser {
     }
 
 
-    public static void movieInfoStAXCursorParser(InputStream is) throws XMLStreamException {
+    public static Movie movieInfoStAXCursorParser(InputStream is) throws XMLStreamException {
 
         List<String> actors = new ArrayList<>();
         List<String> directors = new ArrayList<>();
-        List<String> categories = new ArrayList<>();
+        Movie movie = new Movie();
+        double rate = 0.0;
+        BigInteger year = new BigInteger("0");
 
         XMLInputFactory factory = XMLInputFactory.newInstance();
         factory.setProperty(XMLInputFactory.IS_VALIDATING, false);
@@ -194,7 +285,12 @@ public class BiluStAXParser {
                     } else if (aTag.contains("the-loai")) {
                         reader.next();
                         String category = reader.getText();
-                        categories.add(category.trim());
+                        for (String cate : category.split("-")) {
+                            categories.add(("Phim " + cate.toLowerCase())
+                                    .replaceAll("  "," ")
+                                    .replaceAll("phim","")
+                                    .trim());
+                        }
                     }
                 }
 
@@ -205,9 +301,15 @@ public class BiluStAXParser {
                     if (value.equals("Năm xuất bản:")) {
                         reader.nextTag();
                         reader.nextTag();
-                        reader.next();
-                        String year = reader.getText();
-                        System.out.println(year);
+                        if (reader.next() != XMLStreamConstants.END_ELEMENT) {
+                            try {
+                                year = new BigInteger(reader.getText().trim());
+                            } catch (NumberFormatException e) {
+                                LOGGER.error("WRONG FORMAT FOR YEAR");
+                            }
+                        }
+
+                        movie.setYearPublic(year);
                     }
                 }
 
@@ -216,17 +318,15 @@ public class BiluStAXParser {
                     if (getNodeStaXValue(reader, "span", "", "itemprop") != null
                             && getNodeStaXValue(reader, "span", "", "itemprop").equals("ratingValue")) {
                         reader.next();
-                        String rate = reader.getText();
-                        System.out.println(rate);
+                        rate = Double.parseDouble(reader.getText().trim());
+                        movie.setBiluRate(rate);
                     }
                 }
             }
         }
-        System.out.println(String.join(",", directors));
-        System.out.println(String.join(",", actors));
-        System.out.println(String.join(",", categories));
-        System.out.println("--------------------------------");
-
+        movie.setActors(String.join(",", actors));
+        movie.setDirector(String.join(",", directors));
+        return movie;
     }
 
     public static String getNodeStaXValue(XMLStreamReader reader,
